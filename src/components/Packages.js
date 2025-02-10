@@ -14,6 +14,8 @@ import {
   Box,
   styled,
   keyframes,
+  useTheme,
+  useMediaQuery
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -49,8 +51,33 @@ const PackageCard = styled(Card)(({ theme, featured }) => ({
     boxShadow: featured 
       ? '0 20px 40px rgba(0, 0, 0, 0.3)'
       : '0 15px 30px rgba(0, 0, 0, 0.15)',
-    border: featured ? 'none' : '2px solid #000000',
   },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: '16px',
+  }
+}));
+
+const StyledButton = styled(Button)(({ theme, featured }) => ({
+  background: featured 
+    ? 'linear-gradient(45deg, #FF6B6B 30%, #FF8E53 90%)'
+    : 'transparent',
+  border: featured ? 'none' : '2px solid #000000',
+  borderRadius: '25px',
+  color: featured ? '#ffffff' : '#000000',
+  padding: '10px 30px',
+  fontWeight: 600,
+  transition: 'all 0.3s ease',
+  '&:hover': {
+    background: featured 
+      ? 'linear-gradient(45deg, #FF8E53 30%, #FF6B6B 90%)'
+      : '#000000',
+    color: '#ffffff',
+    transform: 'scale(1.05)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px 20px',
+    fontSize: '0.875rem',
+  }
 }));
 
 const FeaturedBadge = styled(Box)(({ theme }) => ({
@@ -91,25 +118,6 @@ const SaveText = styled(Typography)(({ theme, featured }) => ({
   margin: '0 auto',
 }));
 
-const BookButton = styled(Button)(({ theme, featured }) => ({
-  background: featured 
-    ? 'linear-gradient(to right, #FF6B6B, #FFA07A)'
-    : 'linear-gradient(to right, #FF6B6B, #FFA07A)',
-  color: '#ffffff',
-  borderRadius: '25px',
-  padding: '12px 35px',
-  fontSize: '1rem',
-  fontWeight: 'bold',
-  transition: 'all 0.3s ease-in-out',
-  '&:hover': {
-    background: featured 
-      ? 'linear-gradient(to right, #FFA07A, #FF6B6B)'
-      : 'linear-gradient(to right, #FFA07A, #FF6B6B)',
-    transform: 'translateY(-2px)',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-  },
-}));
-
 const StyledListItemIcon = styled(ListItemIcon)(({ featured }) => ({
   minWidth: '35px',
   '& .MuiSvgIcon-root': {
@@ -146,6 +154,9 @@ const PackageTitle = styled(Typography)(({ theme, featured }) => ({
 }));
 
 const Packages = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const packages = [
     {
       title: 'Essential Beauty',
@@ -191,85 +202,117 @@ const Packages = () => {
   ];
 
   return (
-    <Box sx={{
-      py: 8,
-      background: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    <Box sx={{ 
+      py: { xs: 4, sm: 6, md: 8 },
+      px: { xs: 2, sm: 3, md: 4 },
+      background: '#f8f9fa'
     }}>
-      <Container>
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          sx={{ 
-            mb: 2,
-            fontWeight: 700,
-            background: 'linear-gradient(45deg, #000000 30%, #333333 90%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          Exclusive Packages
-        </Typography>
+      <Container maxWidth="lg">
+        <Box sx={{ 
+          textAlign: 'center', 
+          mb: { xs: 4, sm: 6, md: 8 }
+        }}>
+          <Typography 
+            variant={isMobile ? "h3" : "h2"}
+            sx={{ 
+              fontWeight: 700,
+              mb: { xs: 1, sm: 2 },
+              fontSize: {
+                xs: '2rem',
+                sm: '2.5rem',
+                md: '3rem'
+              }
+            }}
+          >
+            Exclusive Packages
+          </Typography>
+          <Typography 
+            variant={isMobile ? "body1" : "h6"}
+            color="text.secondary"
+            sx={{ 
+              maxWidth: '800px',
+              mx: 'auto',
+              px: { xs: 2, sm: 0 },
+              fontSize: {
+                xs: '1rem',
+                sm: '1.25rem'
+              }
+            }}
+          >
+            Choose the perfect package for your beauty needs
+          </Typography>
+        </Box>
 
-        <Typography
-          variant="h5"
-          align="center"
-          color="text.secondary"
-          sx={{ mb: 8 }}
-        >
-          Choose the perfect package for your beauty needs
-        </Typography>
-
-        <Grid container spacing={4} alignItems="center">
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} alignItems="stretch">
           {packages.map((pkg, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <PackageCard featured={pkg.featured ? true : undefined} elevation={pkg.featured ? 10 : 2}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <PackageCard featured={pkg.featured} elevation={pkg.featured ? 12 : 2}>
                 {pkg.featured && <FeaturedBadge>BEST VALUE</FeaturedBadge>}
-                <CardContent sx={{ flexGrow: 1, p: 4 }}>
-                  <PackageTitle featured={pkg.featured ? true : undefined}>
-                    {pkg.title}
-                  </PackageTitle>
+                <CardContent sx={{ 
+                  p: { xs: 2, sm: 3 },
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}>
+                  <Box sx={{ mb: { xs: 2, sm: 3 } }}>
+                    <PackageTitle featured={pkg.featured}>
+                      {pkg.title}
+                    </PackageTitle>
 
-                  <PriceText featured={pkg.featured ? true : undefined}>
-                    {pkg.price}
-                  </PriceText>
+                    <PriceText featured={pkg.featured}>
+                      {pkg.price}
+                    </PriceText>
 
-                  <Typography
-                    align="center"
-                    sx={{
-                      textDecoration: 'line-through',
-                      color: pkg.featured ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
-                      mb: 2,
-                    }}
-                  >
-                    {pkg.originalPrice}
-                  </Typography>
+                    <Typography
+                      align="center"
+                      sx={{
+                        textDecoration: 'line-through',
+                        color: pkg.featured ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                        mb: 2,
+                      }}
+                    >
+                      {pkg.originalPrice}
+                    </Typography>
 
-                  <SaveText featured={pkg.featured ? true : undefined}>
-                    Save {pkg.save}
-                  </SaveText>
+                    <SaveText featured={pkg.featured}>
+                      Save {pkg.save}
+                    </SaveText>
 
-                  <List sx={{ mb: 2 }}>
-                    {pkg.services.map((service, idx) => (
-                      <ListItem key={idx} sx={{ py: 0.5 }}>
-                        <StyledListItemIcon featured={pkg.featured}>
-                          <CheckCircleIcon />
-                        </StyledListItemIcon>
-                        <StyledListItemText featured={pkg.featured} primary={service} />
-                      </ListItem>
-                    ))}
-                  </List>
+                    <List sx={{ mb: 2, flexGrow: 1 }}>
+                      {pkg.services.map((service, idx) => (
+                        <ListItem 
+                          key={idx} 
+                          sx={{ 
+                            p: { xs: 0.5, sm: 1 },
+                            '&:last-child': { pb: 0 }
+                          }}
+                        >
+                          <StyledListItemIcon featured={pkg.featured}>
+                            <CheckCircleIcon 
+                              sx={{ 
+                                color: pkg.featured ? '#ffffff' : '#000000',
+                                fontSize: {
+                                  xs: '1.25rem',
+                                  sm: '1.5rem'
+                                }
+                              }} 
+                            />
+                          </StyledListItemIcon>
+                          <StyledListItemText featured={pkg.featured} primary={service} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
                 </CardContent>
-                <CardActions sx={{ p: 4, pt: 0 }}>
-                  <BookButton
-                    fullWidth
-                    featured={pkg.featured ? true : undefined}
-                    variant="contained"
-                    size="large"
+                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0 }}>
+                  <StyledButton 
+                    fullWidth 
+                    featured={pkg.featured}
+                    variant={pkg.featured ? "contained" : "outlined"}
                     startIcon={<LocalOfferIcon />}
                   >
                     Book Now
-                  </BookButton>
+                  </StyledButton>
                 </CardActions>
               </PackageCard>
             </Grid>

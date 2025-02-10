@@ -43,28 +43,42 @@ const FeatureCard = styled(Box)(({ theme }) => ({
     '& .icon-wrapper': {
       background: 'linear-gradient(to right, #FFA07A, #FF6B6B)',
     }
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(3),
+    borderRadius: '16px',
   }
 }));
 
-const IconWrapper = styled(Box)({
+const IconWrapper = styled(Box)(({ theme }) => ({
   width: '80px',
   height: '80px',
   borderRadius: '50%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  margin: '0 auto 20px',
-  background: 'linear-gradient(to right, #FF6B6B, #FFA07A)',
-  transition: 'all 0.3s ease-in-out',
+  margin: '0 auto',
+  marginBottom: theme.spacing(3),
+  background: '#000000',
+  transition: 'all 0.3s ease',
+  animation: `${pulse} 2s infinite`,
   '& svg': {
     fontSize: '40px',
-    color: '#ffffff'
+    color: '#ffffff',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '60px',
+    height: '60px',
+    marginBottom: theme.spacing(2),
+    '& svg': {
+      fontSize: '30px',
+    },
   }
-});
+}));
 
 const BeautyFeatures = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const features = [
     {
@@ -90,70 +104,78 @@ const BeautyFeatures = () => {
   ];
 
   return (
-    <Box sx={{
-      py: 8,
-      background: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    <Box sx={{ 
+      py: { xs: 4, sm: 6, md: 8 },
+      px: { xs: 2, sm: 3, md: 4 },
+      background: '#f8f9fa'
     }}>
-      <Container>
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          sx={{
-            mb: 2,
-            fontWeight: 700,
-            color: '#000000',
-            position: 'relative',
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: '-10px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '60px',
-              height: '3px',
-              background: '#000000',
-            }
-          }}
-        >
-          Our Beauty Services
-        </Typography>
-        <Typography
-          variant="h6"
-          align="center"
-          sx={{
-            mb: 6,
-            color: '#666666',
-            maxWidth: '800px',
-            mx: 'auto'
-          }}
-        >
-          Experience luxury beauty services in the comfort of your home
-        </Typography>
-        <Grid container spacing={4}>
+      <Container maxWidth="lg">
+        <Box sx={{ 
+          textAlign: 'center', 
+          mb: { xs: 4, sm: 6, md: 8 }
+        }}>
+          <Typography 
+            variant={isMobile ? "h3" : "h2"}
+            sx={{ 
+              fontWeight: 700,
+              mb: { xs: 1, sm: 2 },
+              fontSize: {
+                xs: '2rem',
+                sm: '2.5rem',
+                md: '3rem'
+              },
+              animation: `${glowText} 3s infinite`
+            }}
+          >
+            Our Beauty Services
+          </Typography>
+          <Typography 
+            variant={isMobile ? "body1" : "h6"}
+            color="text.secondary"
+            sx={{ 
+              maxWidth: '800px',
+              mx: 'auto',
+              px: { xs: 2, sm: 0 },
+              fontSize: {
+                xs: '1rem',
+                sm: '1.25rem'
+              }
+            }}
+          >
+            Experience luxury beauty services in the comfort of your home
+          </Typography>
+        </Box>
+
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           {features.map((feature, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <FeatureCard>
                 <IconWrapper className="icon-wrapper">
                   {feature.icon}
                 </IconWrapper>
-                <Typography
-                  variant="h5"
+                <Typography 
+                  variant={isMobile ? "h6" : "h5"}
                   component="h3"
-                  gutterBottom
-                  sx={{
+                  sx={{ 
+                    mb: { xs: 1, sm: 2 },
                     fontWeight: 600,
-                    color: '#000000',
-                    mb: 2
+                    fontSize: {
+                      xs: '1.1rem',
+                      sm: '1.25rem',
+                      md: '1.5rem'
+                    }
                   }}
                 >
                   {feature.title}
                 </Typography>
-                <Typography
+                <Typography 
                   variant="body1"
+                  color="text.secondary"
                   sx={{
-                    color: '#666666',
-                    lineHeight: 1.7
+                    fontSize: {
+                      xs: '0.875rem',
+                      sm: '1rem'
+                    }
                   }}
                 >
                   {feature.description}
