@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-brown: #2B1810;
+  --secondary-brown: #3D2317;
+  --light-brown: #5C3A2E;
+  --accent-brown: #8B5E4C;
+  --text-color: #000000;
+  --text-light: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: #FFF8F5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.slick-dots {
+  bottom: 25px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 12px !important;
+  color: white !important;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+}
+
+/* Adding theme styles */
+.navbar {
+  background-color: var(--primary-brown);
+  color: var(--text-light);
+}
+
+.footer {
+  background-color: var(--primary-brown);
+  color: var(--text-light);
+}
+
+.btn-primary {
+  background-color: var(--secondary-brown);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--light-brown);
+}
+
+.section-title {
+  color: var(--primary-brown);
+}
+
+.card {
+  background-color: #FFF;
+  border: 1px solid var(--accent-brown);
+}
+
+.card-title {
+  color: var(--primary-brown);
+}
