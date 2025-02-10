@@ -14,8 +14,6 @@ import {
   Box,
   styled,
   keyframes,
-  useTheme,
-  useMediaQuery
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -32,52 +30,31 @@ const shine = keyframes`
   }
 `;
 
-const PackageCard = styled(Card)(({ theme, featured }) => ({
+const PackageCard = styled(Card)(({ theme }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
   borderRadius: '20px',
   position: 'relative',
   overflow: 'hidden',
-  background: featured 
-    ? 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)'
-    : '#ffffff',
+  background: '#ffffff',
   backgroundSize: '200% 200%',
-  animation: featured ? `${shine} 15s ease infinite` : 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  border: featured ? 'none' : '2px solid #000000',
+  border: '2px solid #000000',
+  '&[data-featured="true"]': {
+    background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)',
+    animation: `${shine} 15s ease infinite`,
+    border: 'none',
+  },
   '&:hover': {
     transform: 'translateY(-10px)',
-    boxShadow: featured 
-      ? '0 20px 40px rgba(0, 0, 0, 0.3)'
-      : '0 15px 30px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.15)',
+    border: '2px solid #000000',
+    '&[data-featured="true"]': {
+      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+      border: 'none',
+    },
   },
-  [theme.breakpoints.down('sm')]: {
-    borderRadius: '16px',
-  }
-}));
-
-const StyledButton = styled(Button)(({ theme, featured }) => ({
-  background: featured 
-    ? 'linear-gradient(45deg, #FF6B6B 30%, #FF8E53 90%)'
-    : 'transparent',
-  border: featured ? 'none' : '2px solid #000000',
-  borderRadius: '25px',
-  color: featured ? '#ffffff' : '#000000',
-  padding: '10px 30px',
-  fontWeight: 600,
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    background: featured 
-      ? 'linear-gradient(45deg, #FF8E53 30%, #FF6B6B 90%)'
-      : '#000000',
-    color: '#ffffff',
-    transform: 'scale(1.05)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    padding: '8px 20px',
-    fontSize: '0.875rem',
-  }
 }));
 
 const FeaturedBadge = styled(Box)(({ theme }) => ({
@@ -95,47 +72,79 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
   letterSpacing: '1px',
 }));
 
-const PriceText = styled(Typography)(({ theme, featured }) => ({
-  color: featured ? '#ffffff' : '#000000',
+const PriceText = styled(Typography)(({ theme }) => ({
+  color: '#000000',
   fontWeight: 800,
   fontSize: '2.75rem',
   textAlign: 'center',
   marginBottom: theme.spacing(1),
   fontFamily: 'inherit',
   letterSpacing: '-1px',
+  '[data-featured="true"] &': {
+    color: '#ffffff',
+  },
 }));
 
-const SaveText = styled(Typography)(({ theme, featured }) => ({
-  color: featured ? '#ffffff' : '#000000',
+const SaveText = styled(Typography)(({ theme }) => ({
+  color: '#000000',
   fontWeight: 700,
   textAlign: 'center',
   fontSize: '1.1rem',
   opacity: 0.9,
   padding: '8px 16px',
-  background: featured ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+  background: 'rgba(0, 0, 0, 0.05)',
   borderRadius: '20px',
   display: 'inline-block',
   margin: '0 auto',
-}));
-
-const StyledListItemIcon = styled(ListItemIcon)(({ featured }) => ({
-  minWidth: '35px',
-  '& .MuiSvgIcon-root': {
-    color: featured ? '#ffffff' : '#000000',
-    fontSize: '1.2rem',
+  '[data-featured="true"] &': {
+    color: '#ffffff',
+    background: 'rgba(255, 255, 255, 0.1)',
   },
 }));
 
-const StyledListItemText = styled(ListItemText)(({ featured }) => ({
+const BookButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(to right, #FF6B6B, #FFA07A)',
+  color: '#ffffff',
+  borderRadius: '25px',
+  padding: '12px 35px',
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    background: 'linear-gradient(to right, #FFA07A, #FF6B6B)',
+    transform: 'translateY(-2px)',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  },
+}));
+
+const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
+  minWidth: '35px',
+  '& .MuiSvgIcon-root': {
+    color: '#000000',
+    fontSize: '1.2rem',
+  },
+  '[data-featured="true"] &': {
+    '& .MuiSvgIcon-root': {
+      color: '#ffffff',
+    },
+  },
+}));
+
+const StyledListItemText = styled(ListItemText)(({ theme }) => ({
   '& .MuiListItemText-primary': {
-    color: featured ? '#ffffff' : '#000000',
+    color: '#000000',
     fontSize: '1rem',
     fontWeight: 500,
   },
+  '[data-featured="true"] &': {
+    '& .MuiListItemText-primary': {
+      color: '#ffffff',
+    },
+  },
 }));
 
-const PackageTitle = styled(Typography)(({ theme, featured }) => ({
-  color: featured ? '#ffffff' : '#000000',
+const PackageTitle = styled(Typography)(({ theme }) => ({
+  color: '#000000',
   fontWeight: 800,
   fontSize: '1.75rem',
   textAlign: 'center',
@@ -149,14 +158,17 @@ const PackageTitle = styled(Typography)(({ theme, featured }) => ({
     transform: 'translateX(-50%)',
     width: '50px',
     height: '3px',
-    background: featured ? '#ffffff' : '#000000',
-  }
+    background: '#000000',
+  },
+  '[data-featured="true"] &': {
+    color: '#ffffff',
+    '&:after': {
+      background: '#ffffff',
+    },
+  },
 }));
 
 const Packages = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   const packages = [
     {
       title: 'Essential Beauty',
@@ -202,117 +214,84 @@ const Packages = () => {
   ];
 
   return (
-    <Box sx={{ 
-      py: { xs: 4, sm: 6, md: 8 },
-      px: { xs: 2, sm: 3, md: 4 },
-      background: '#f8f9fa'
+    <Box sx={{
+      py: 8,
+      background: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
     }}>
-      <Container maxWidth="lg">
-        <Box sx={{ 
-          textAlign: 'center', 
-          mb: { xs: 4, sm: 6, md: 8 }
-        }}>
-          <Typography 
-            variant={isMobile ? "h3" : "h2"}
-            sx={{ 
-              fontWeight: 700,
-              mb: { xs: 1, sm: 2 },
-              fontSize: {
-                xs: '2rem',
-                sm: '2.5rem',
-                md: '3rem'
-              }
-            }}
-          >
-            Exclusive Packages
-          </Typography>
-          <Typography 
-            variant={isMobile ? "body1" : "h6"}
-            color="text.secondary"
-            sx={{ 
-              maxWidth: '800px',
-              mx: 'auto',
-              px: { xs: 2, sm: 0 },
-              fontSize: {
-                xs: '1rem',
-                sm: '1.25rem'
-              }
-            }}
-          >
-            Choose the perfect package for your beauty needs
-          </Typography>
-        </Box>
+      <Container>
+        <Typography
+          variant="h2"
+          component="h2"
+          align="center"
+          sx={{ 
+            mb: 2,
+            fontWeight: 700,
+            background: 'linear-gradient(45deg, #000000 30%, #333333 90%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Exclusive Packages
+        </Typography>
 
-        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} alignItems="stretch">
+        <Typography
+          variant="h5"
+          align="center"
+          color="text.secondary"
+          sx={{ mb: 8 }}
+        >
+          Choose the perfect package for your beauty needs
+        </Typography>
+
+        <Grid container spacing={4} alignItems="center">
           {packages.map((pkg, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <PackageCard featured={pkg.featured} elevation={pkg.featured ? 12 : 2}>
+              <PackageCard data-featured={pkg.featured}>
                 {pkg.featured && <FeaturedBadge>BEST VALUE</FeaturedBadge>}
-                <CardContent sx={{ 
-                  p: { xs: 2, sm: 3 },
-                  flexGrow: 1,
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}>
-                  <Box sx={{ mb: { xs: 2, sm: 3 } }}>
-                    <PackageTitle featured={pkg.featured}>
-                      {pkg.title}
-                    </PackageTitle>
+                <CardContent sx={{ flexGrow: 1, p: 4 }}>
+                  <PackageTitle>
+                    {pkg.title}
+                  </PackageTitle>
 
-                    <PriceText featured={pkg.featured}>
-                      {pkg.price}
-                    </PriceText>
+                  <PriceText>
+                    {pkg.price}
+                  </PriceText>
 
-                    <Typography
-                      align="center"
-                      sx={{
-                        textDecoration: 'line-through',
-                        color: pkg.featured ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
-                        mb: 2,
-                      }}
-                    >
-                      {pkg.originalPrice}
-                    </Typography>
+                  <Typography
+                    align="center"
+                    sx={{
+                      textDecoration: 'line-through',
+                      color: pkg.featured ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                      mb: 2,
+                    }}
+                  >
+                    {pkg.originalPrice}
+                  </Typography>
 
-                    <SaveText featured={pkg.featured}>
-                      Save {pkg.save}
-                    </SaveText>
+                  <SaveText>
+                    Save {pkg.save}
+                  </SaveText>
 
-                    <List sx={{ mb: 2, flexGrow: 1 }}>
-                      {pkg.services.map((service, idx) => (
-                        <ListItem 
-                          key={idx} 
-                          sx={{ 
-                            p: { xs: 0.5, sm: 1 },
-                            '&:last-child': { pb: 0 }
-                          }}
-                        >
-                          <StyledListItemIcon featured={pkg.featured}>
-                            <CheckCircleIcon 
-                              sx={{ 
-                                color: pkg.featured ? '#ffffff' : '#000000',
-                                fontSize: {
-                                  xs: '1.25rem',
-                                  sm: '1.5rem'
-                                }
-                              }} 
-                            />
-                          </StyledListItemIcon>
-                          <StyledListItemText featured={pkg.featured} primary={service} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Box>
+                  <List sx={{ mb: 2 }}>
+                    {pkg.services.map((service, idx) => (
+                      <ListItem key={idx} sx={{ py: 0.5 }}>
+                        <StyledListItemIcon>
+                          <CheckCircleIcon />
+                        </StyledListItemIcon>
+                        <StyledListItemText primary={service} />
+                      </ListItem>
+                    ))}
+                  </List>
                 </CardContent>
-                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0 }}>
-                  <StyledButton 
-                    fullWidth 
-                    featured={pkg.featured}
-                    variant={pkg.featured ? "contained" : "outlined"}
+                <CardActions sx={{ p: 4, pt: 0 }}>
+                  <BookButton
+                    fullWidth
+                    variant="contained"
+                    size="large"
                     startIcon={<LocalOfferIcon />}
                   >
                     Book Now
-                  </StyledButton>
+                  </BookButton>
                 </CardActions>
               </PackageCard>
             </Grid>

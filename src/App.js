@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme/theme';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CategoryBar from './components/CategoryBar';
 import Hero from './components/Hero';
@@ -24,35 +24,33 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Box sx={{ 
-          backgroundColor: theme.palette.background.default,
-          minHeight: '100vh'
-        }}>
-          <Navbar />
-          <CategoryBar />
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Hero />
-                <Services />
-                <KeyFeatures />
-                {/* <SalonServices /> */}
-                <Packages />
-                <RecommendedPackages />
-                <BeautyFeatures />
-                <HowItWorks />
-                <Brands />
-                <Testimonials />
-              </>
-            } />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-          <Footer />
-        </Box>
-      </Router>
+      <Box sx={{ 
+        backgroundColor: theme.palette.background.default,
+        minHeight: '100vh'
+      }}>
+        <Navbar />
+        <CategoryBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Services />
+              <KeyFeatures />
+              {/* <SalonServices /> */}
+              <Packages />
+              <RecommendedPackages />
+              <BeautyFeatures />
+              <HowItWorks />
+              <Brands />
+              <Testimonials />
+            </>
+          } />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }

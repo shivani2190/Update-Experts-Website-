@@ -4,16 +4,12 @@ import {
   Box,
   Toolbar,
   IconButton,
-  Typography,
   InputBase,
   Badge,
   styled,
   Container,
   useTheme,
   useMediaQuery,
-  Menu,
-  MenuItem,
-  Button,
   Drawer,
   List,
   ListItem,
@@ -40,7 +36,6 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 const SearchBox = styled('div')(({ theme }) => ({
-  position: 'relative',
   backgroundColor: '#ffffff',
   borderRadius: '50px',
   marginLeft: theme.spacing(2),
@@ -48,6 +43,7 @@ const SearchBox = styled('div')(({ theme }) => ({
   maxWidth: '600px',
   display: 'flex',
   alignItems: 'center',
+  position: 'relative',
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('md')]: {
     maxWidth: '100%',
@@ -60,13 +56,15 @@ const SearchBox = styled('div')(({ theme }) => ({
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  color: '#000000',
+  height: '100%',
   position: 'absolute',
   right: 0,
-  height: '100%',
+  top: 0,
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   cursor: 'pointer',
+  color: '#666',
   transition: 'all 0.3s ease',
   '&:hover': {
     color: theme.palette.primary.main,
@@ -74,13 +72,14 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#000',
+  color: '#333',
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1.5, 5, 1.5, 2),
     fontSize: '0.95rem',
     width: '100%',
     transition: 'all 0.3s ease',
+    paddingRight: '48px', // Make room for the search icon
     '&::placeholder': {
       color: '#666',
       opacity: 0.8,
@@ -161,7 +160,7 @@ const Navbar = () => {
   const drawer = (
     <Box sx={{ pt: 2 }}>
       <Box sx={{ px: 2, mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <LogoImage src="/logo.png" alt="Logo" />
+        <LogoImage src="/Update-Experts-Website-/logo.png" alt="Logo" />
         <IconButton color="inherit" onClick={handleDrawerToggle}>
           <MenuIcon />
         </IconButton>
@@ -216,7 +215,7 @@ const Navbar = () => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <LogoImage src="/logo.png" alt="Logo" />
+            <LogoImage src="/Update-Experts-Website-/logo.png" alt="Logo" />
             {!isMobile && (
               <Box sx={{ display: 'flex', gap: 1 }}>
                 {menuItems.map((item) => (

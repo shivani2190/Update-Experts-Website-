@@ -126,13 +126,18 @@ const CarouselDots = styled(Box)(({ theme }) => ({
   gap: theme.spacing(1),
 }));
 
-const CarouselDot = styled(Box)(({ active }) => ({
+const CarouselDot = styled(Box, {
+  shouldComponentUpdate: true,
+})(({ theme, active }) => ({
   width: 8,
   height: 8,
   borderRadius: '50%',
   backgroundColor: active ? '#fff' : 'rgba(255, 255, 255, 0.5)',
   cursor: 'pointer',
   transition: 'background-color 0.3s ease',
+  '&[data-active="true"]': {
+    backgroundColor: '#fff'
+  }
 }));
 
 const OfferBox = styled(Box)(({ theme }) => ({
@@ -402,7 +407,7 @@ const Hero = () => {
                 {offers.map((_, index) => (
                   <CarouselDot
                     key={index}
-                    active={currentSlide === index}
+                    data-active={currentSlide === index}
                     onClick={() => setCurrentSlide(index)}
                   />
                 ))}
