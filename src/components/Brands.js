@@ -90,12 +90,12 @@ const Brands = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const brands = [
-    { name: 'L\'Oreal', image: '/Update-Experts-Website-/assets/brands/loreal.png' },
-    { name: 'Casmara', image: '/Update-Experts-Website-/assets/brands/casmara.png' },
-    { name: 'Oxy', image: '/Update-Experts-Website-/assets/brands/oxy.jpeg' },
-    { name: 'Professional', image: '/Update-Experts-Website-/assets/brands/professional.jpg' },
-    { name: 'Raga', image: '/Update-Experts-Website-/assets/brands/raga.png' },
-    { name: 'Rics', image: '/Update-Experts-Website-/assets/brands/rica.webp' },
+    { name: 'L\'Oreal', image: '/assets/brands/loreal.png' },
+    { name: 'Casmara', image: '/assets/brands/casmara.png' },
+    { name: 'Oxy', image: '/assets/brands/oxy.jpeg' },
+    { name: 'Professional', image: '/assets/brands/professional.jpg' },
+    { name: 'Raga', image: '/assets/brands/raga.png' },
+    { name: 'Rics', image: '/assets/brands/rica.webp' },
   ];
 
   return (
