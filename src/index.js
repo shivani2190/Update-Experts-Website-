@@ -15,8 +15,7 @@ const router = createBrowserRouter([
     v7_startTransition: true,
     v7_relativeSplatPath: true,
     v7_prependBasename: true
-  },
-  basename: "/Update-Experts-Website-"
+  }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -160,7 +160,7 @@ const Navbar = () => {
   const drawer = (
     <Box sx={{ pt: 2 }}>
       <Box sx={{ px: 2, mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <LogoImage src="/Update-Experts-Website-/logo.png" alt="Logo" />
+        <LogoImage src="/logo.png" alt="Logo" />
         <IconButton color="inherit" onClick={handleDrawerToggle}>
           <MenuIcon />
         </IconButton>
@@ -215,7 +215,7 @@ const Navbar = () => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <LogoImage src="/Update-Experts-Website-/logo.png" alt="Logo" />
+            <LogoImage src="/logo.png" alt="Logo" />
             {!isMobile && (
               <Box sx={{ display: 'flex', gap: 1 }}>
                 {menuItems.map((item) => (

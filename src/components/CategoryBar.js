@@ -50,15 +50,15 @@ const CategoryText = styled('span')({
 });
 
 const categories = [
-  { name: 'Facial', icon: '/Update-Experts-Website-/assets/category/p1.jpg', path: '/' },
-  { name: 'Manicure', icon: '/Update-Experts-Website-/assets/category/p2.jpg', path: '/' },
-  { name: 'Pedicure', icon: '/Update-Experts-Website-/assets/category/p3.jpg', path: '/' },
-  { name: 'Waxing', icon: '/Update-Experts-Website-/assets/category/p4.jpg', path: '/' },
-  { name: 'Makeup', icon: '/Update-Experts-Website-/assets/category/p5.jpg', path: '/' },
-  { name: 'Threading', icon: '/Update-Experts-Website-/assets/category/p6.jpg', path: '/' },
-  { name: 'Hair Care', icon: '/Update-Experts-Website-/assets/category/p7.jpg', path: '/' },
-  { name: 'Spa', icon: '/Update-Experts-Website-/assets/category/p8.jpg', path: '/' },
-  { name: 'Massage', icon: '/Update-Experts-Website-/assets/category/p9.jpg', path: '/' }
+  { name: 'Facial', icon: '/assets/category/p1.jpg', path: '/' },
+  { name: 'Manicure', icon: '/assets/category/p2.jpg', path: '/' },
+  { name: 'Pedicure', icon: '/assets/category/p3.jpg', path: '/' },
+  { name: 'Waxing', icon: '/assets/category/p4.jpg', path: '/' },
+  { name: 'Makeup', icon: '/assets/category/p5.jpg', path: '/' },
+  { name: 'Threading', icon: '/assets/category/p6.jpg', path: '/' },
+  { name: 'Hair Care', icon: '/assets/category/p7.jpg', path: '/' },
+  { name: 'Spa', icon: '/assets/category/p8.jpg', path: '/' },
+  { name: 'Massage', icon: '/assets/category/p9.jpg', path: '/' }
 ];
 
 const CategoryBar = () => {

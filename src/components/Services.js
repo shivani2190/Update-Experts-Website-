@@ -52,7 +52,7 @@ const services = [
     price: '₹400',
     duration: '60-90 min',
     rating: 4.9,
-    image: '/Update-Experts-Website-/assets/category/p10.jpg'
+    image: '/assets/category/p10.jpg'
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ const services = [
     price: 'From ₹400',
     duration: '180 min',
     rating: 5.0,
-    image: '/Update-Experts-Website-/assets/category/p5.jpg'
+    image: '/assets/category/p5.jpg'
   }
 ];
 

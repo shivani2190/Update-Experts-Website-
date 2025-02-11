@@ -162,7 +162,7 @@ const RecommendedPackages = () => {
     {
       id: 1,
       title: 'Sit, Back & Relax',
-      image: '/Update-Experts-Website-/assets/packages/a1.jfif',
+      image: '/assets/packages/a1.jfif',
       services: [
         { name: 'Threading', details: 'Eyebrows & Upperlips Threading' },
         { name: 'Waxing', details: 'Full Arms Honey' },
@@ -178,7 +178,7 @@ const RecommendedPackages = () => {
     {
       id: 2,
       title: 'Express Yourself',
-      image: '/Update-Experts-Website-/assets/packages/a2.jpg',
+      image: '/assets/packages/a2.jpg',
       services: [
         { name: 'Threading', details: 'Eyebrows & Upperlips Threading' },
         { name: 'Bleach', details: 'Face Bleach' },
@@ -194,7 +194,7 @@ const RecommendedPackages = () => {
     {
       id: 3,
       title: 'Super Saving Deals',
-      image: '/Update-Experts-Website-/assets/packages/a3.jpg',
+      image: '/assets/packages/a3.jpg',
       services: [
         { name: 'Waxing', details: 'Bikni Honey' },
         { name: 'Waxing', details: 'Full Arms Rica' },
@@ -210,7 +210,7 @@ const RecommendedPackages = () => {
     {
       id: 4,
       title: 'Wax It!',
-      image: '/Update-Experts-Website-/assets/packages/a4.jpg',
+      image: '/assets/packages/a4.jpg',
       services: [
         { name: 'Threading', details: 'Eyebrows Threading' },
         { name: 'Bleach', details: 'Face Bleach' },
