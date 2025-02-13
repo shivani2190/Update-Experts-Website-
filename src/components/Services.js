@@ -1,185 +1,178 @@
-import React from 'react';
-import {
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-  Box,
-  styled,
-  IconButton,
-  Divider
-} from '@mui/material';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import StarIcon from '@mui/icons-material/Star';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import React, { useState } from 'react';
+import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, IconButton, styled } from '@mui/material';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-const ServiceCard = styled(Card)(({ theme }) => ({
+const ProductCard = styled(Card)(({ theme }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
+  borderRadius: '20px',
+  background: '#ffffff',
   transition: 'all 0.3s ease-in-out',
-  borderRadius: '16px',
-  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+  border: '1px solid rgba(255, 77, 141, 0.1)',
+  overflow: 'visible',
+  position: 'relative',
   '&:hover': {
-    transform: 'translateY(-8px)',
-    boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
-  },
+    transform: 'translateY(-10px)',
+    boxShadow: '0 20px 40px rgba(255, 77, 141, 0.1)',
+    '& .MuiCardMedia-root': {
+      transform: 'scale(1.05)',
+    }
+  }
 }));
 
-const ServiceButton = styled(Button)(({ theme }) => ({
-  background: 'linear-gradient(45deg, #FF6B6B 30%, #FF8E53 90%)',
-  border: 0,
-  borderRadius: 20,
-  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-  '&:hover': {
-    background: 'linear-gradient(45deg, #FF8E53 30%, #FF6B6B 90%)',
-    transform: 'scale(1.02)',
-  },
+const ImageWrapper = styled(Box)({
+  position: 'relative',
+  overflow: 'hidden',
+  borderRadius: '20px 20px 0 0',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(180deg, rgba(255,77,141,0) 0%, rgba(255,77,141,0.1) 100%)',
+    transition: 'all 0.3s ease'
+  }
+});
+
+const ProductImage = styled(CardMedia)({
+  height: 200,
+  transition: 'transform 0.3s ease-in-out'
+});
+
+const Price = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  fontWeight: 600,
+  fontSize: '1.25rem',
+  marginTop: '8px'
 }));
 
-const services = [
+const NavigationButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: '#ffffff',
+  color: '#FF4D8D',
+  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  '&:hover': {
+    backgroundColor: '#FF4D8D',
+    color: '#ffffff',
+  },
+  '&.Mui-disabled': {
+    backgroundColor: '#f5f5f5',
+    color: '#bdbdbd',
+  }
+}));
+
+const products = [
   {
     id: 1,
-    title: 'Premium Hair Styling',
-    description: 'Transform your look with our expert hair styling services. Includes consultation, wash, cut, and styling with premium products.',
-    price: '₹400',
-    duration: '60-90 min',
-    rating: 4.9,
-    image: '/assets/category/p10.jpg'
+    title: 'Face Serum',
+    description: 'Hydrating face serum with vitamin C',
+    price: '₹1149',
+    image: '/images/products/face-serum.jpg'
   },
   {
     id: 2,
-    title: 'Luxury Spa Experience',
-    description: 'Indulge in our signature spa treatments featuring aromatherapy, hot stone massage, and premium organic products.',
-    price: 'From ₹400',
-    duration: '90-120 min',
-    rating: 5.0,
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
+    title: 'Hair Oil',
+    description: 'Natural hair growth oil',
+    price: '₹899',
+    image: '/images/products/hair-oil.jpg'
   },
   {
     id: 3,
-    title: 'Advanced Skin Therapy',
-    description: 'Revitalize your skin with our advanced treatments including microdermabrasion, chemical peels, and LED therapy.',
-    price: 'From ₹400',
-    duration: '60 min',
-    rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
+    title: 'Face Cream',
+    description: 'Anti-aging moisturizing cream',
+    price: '₹1299',
+    image: '/images/products/face-cream.jpg'
   },
   {
     id: 4,
-    title: 'Luxury Nail Studio',
-    description: 'Experience our premium nail care services with long-lasting gel options and artistic nail designs.',
-    price: 'From ₹400',
-    duration: '45-75 min',
-    rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
+    title: 'Body Lotion',
+    description: 'Nourishing body lotion',
+    price: '₹799',
+    image: '/images/products/body-lotion.jpg'
   },
   {
     id: 5,
-    title: 'Professional Makeup',
-    description: 'Get ready for any occasion with our professional makeup services using high-end cosmetic brands.',
-    price: 'From ₹400',
-    duration: '60 min',
-    rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 6,
-    title: 'VIP Beauty Package',
-    description: 'Complete beauty transformation including hair, makeup, and nail services for special occasions.',
-    price: 'From ₹400',
-    duration: '180 min',
-    rating: 5.0,
-    image: '/assets/category/p5.jpg'
+    title: 'Face Mask',
+    description: 'Deep cleansing clay mask',
+    price: '₹499',
+    image: '/images/products/face-mask.jpg'
   }
 ];
 
 const Services = () => {
-  const handleBooking = (serviceId) => {
-    // Implement booking logic
-    console.log(`Booking service ${serviceId}`);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 4;
+  const pageCount = Math.ceil(products.length / itemsPerPage);
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => Math.max(0, prev - 1));
   };
 
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(pageCount - 1, prev + 1));
+  };
+
+  const currentProducts = products.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
   return (
-    <Box sx={{ 
-      py: 8,
-      background: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-      position: 'relative'
-    }}>
+    <Box sx={{ py: 8, backgroundColor: '#fff5f8' }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography 
-            variant="h2" 
-            sx={{ 
-              fontWeight: 700,
-              background: '#000000',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              mb: 2
-            }}
-          >
-            Luxury Services
-          </Typography>
-          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: '800px', mx: 'auto' }}>
-            Experience the pinnacle of beauty and wellness with our premium services
-          </Typography>
-        </Box>
-        
+        <Typography
+          variant="h2"
+          align="center"
+          sx={{
+            mb: 6,
+            fontWeight: 700,
+            color: '#2C3E50'
+          }}
+        >
+          Beauty Products
+        </Typography>
         <Grid container spacing={4}>
-          {services.map((service) => (
-            <Grid item key={service.id} xs={12} sm={6} md={4}>
-              <ServiceCard>
-                <CardMedia
-                  component="img"
-                  height="240"
-                  image={service.image}
-                  alt={service.title}
-                  sx={{ objectFit: 'cover' }}
-                />
-                <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-                    {service.title}
+          {currentProducts.map((product) => (
+            <Grid item xs={12} sm={6} md={3} key={product.id}>
+              <ProductCard>
+                <ImageWrapper>
+                  <ProductImage
+                    image={product.image}
+                    title={product.title}
+                  />
+                </ImageWrapper>
+                <CardContent sx={{ textAlign: 'center', pt: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                    {product.title}
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <StarIcon sx={{ color: '#FFD700', mr: 1 }} />
-                    <Typography variant="body2" color="text.secondary">
-                      {service.rating} Rating
-                    </Typography>
-                  </Box>
-                  <Typography color="text.secondary" sx={{ mb: 3 }}>
-                    {service.description}
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    {product.description}
                   </Typography>
-                  <Divider sx={{ my: 2 }} />
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <LocalOfferIcon sx={{ color: '#FF6B6B', mr: 1 }} />
-                      <Typography variant="body2">{service.price}</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <AccessTimeIcon sx={{ color: '#FF6B6B', mr: 1 }} />
-                      <Typography variant="body2">{service.duration}</Typography>
-                    </Box>
-                  </Box>
-                  <ServiceButton
-                    fullWidth
-                    variant="contained"
-                    onClick={() => handleBooking(service.id)}
-                    startIcon={<CalendarTodayIcon />}
-                  >
-                    Book Now
-                  </ServiceButton>
+                  <Price>
+                    {product.price}
+                  </Price>
                 </CardContent>
-              </ServiceCard>
+              </ProductCard>
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, gap: 2 }}>
+          <NavigationButton
+            onClick={handlePrevious}
+            disabled={currentPage === 0}
+          >
+            <NavigateBeforeIcon />
+          </NavigationButton>
+          <NavigationButton
+            onClick={handleNext}
+            disabled={currentPage >= pageCount - 1}
+          >
+            <NavigateNextIcon />
+          </NavigationButton>
+        </Box>
       </Container>
     </Box>
   );
