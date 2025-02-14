@@ -21,6 +21,8 @@ import ServicesPage from './components/ServicesPage';
 import BottomNavigation from './components/BottomNavigation';
 import { Box } from '@mui/material';
 import ServiceDetails from './components/ServiceDetails';
+import OtherServices from './pages/OtherServices';
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -50,6 +52,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:id" element={<ServiceDetails />} />
+          <Route path="/services/other" element={<OtherServices />} />
         </Routes>
         <Footer />
         <BottomNavigation />

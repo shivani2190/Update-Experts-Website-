@@ -58,8 +58,8 @@ const categories = [
   },
   {
     id: 3,
-    title: 'Mehendi At Home',
-    image: '/images/mehendi.jpg',
+    title: 'Advance facial treatment',
+    image: '/images/categories/salon-at-home.jpg',
     link: '/services/mehendi'
   },
   {
@@ -67,6 +67,24 @@ const categories = [
     title: 'MakeUp At Home',
     image: '/images/categories/makeup-at-home.jpg',
     link: '/services/makeup'
+  },
+  {
+    id: 5,
+    title: 'Pre-bridal makeup',
+    image: '/images/categories/makeup-at-home.jpg',
+    link: '/services/makeup'
+  },
+  {
+    id: 6,
+    title: 'Nail Art',
+    image: '/images/categories/makeup-at-home.jpg',
+    link: '/services/makeup'
+  },
+  {
+    id: 7,
+    title: 'Other Services',
+    image: '/images/categories/other-services.jpg',
+    link: '/services/other'
   }
 ];
 
