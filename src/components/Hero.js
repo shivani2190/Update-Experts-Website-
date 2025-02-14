@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, Button, styled } from '@mui/material';
+import { Box, Typography, Button, styled, TextField, InputAdornment, IconButton } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { Search } from '@mui/icons-material';
 
 const fadeIn = keyframes`
   from {
@@ -117,6 +118,51 @@ const SecondaryButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const SearchContainer = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '20px',
+  left: 0,
+  right: 0,
+  padding: '0 16px',
+  backgroundColor: 'transparent',
+  zIndex: 2,
+  [theme.breakpoints.up('md')]: {
+    display: 'none'
+  }
+}));
+
+const SearchField = styled(TextField)(({ theme }) => ({
+  width: '100%',
+  '& .MuiOutlinedInput-root': {
+    backgroundColor: '#fff',
+    borderRadius: '50px',
+    height: '48px',
+    '& fieldset': {
+      borderColor: 'transparent',
+    },
+    '&:hover fieldset': {
+      borderColor: 'transparent',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'transparent',
+    }
+  },
+  '& .MuiOutlinedInput-input': {
+    padding: '12px 16px',
+    fontSize: '15px',
+    '&::placeholder': {
+      color: '#757575',
+      opacity: 1,
+    }
+  }
+}));
+
+const SearchIconButton = styled(IconButton)(({ theme }) => ({
+  padding: '8px',
+  marginRight: '8px',
+  color: '#000',
+}));
+
 function Hero() {
   const navigate = useNavigate();
 
@@ -125,24 +171,41 @@ function Hero() {
   };
 
   return (
-    <HeroSection>
-      <ContentWrapper>
-        <HeroTitle variant="h1">
-          Beauty at Your Doorstep
-        </HeroTitle>
-        <HeroSubtitle>
-          Professional salon services in the comfort of your home
-        </HeroSubtitle>
-        <ButtonGroup>
-          <PrimaryButton variant="contained" onClick={handleBookService}>
-            Book Service
-          </PrimaryButton>
-          <SecondaryButton variant="outlined">
-            Shop Products
-          </SecondaryButton>
-        </ButtonGroup>
-      </ContentWrapper>
-    </HeroSection>
+    <Box sx={{ position: 'relative', width: '100%' }}>
+      <SearchContainer>
+        <SearchField
+          placeholder="Search for Face Mask"
+          variant="outlined"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <SearchIconButton>
+                  <Search sx={{ fontSize: 24 }} />
+                </SearchIconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+      </SearchContainer>
+      <HeroSection>
+        <ContentWrapper>
+          <HeroTitle variant="h1">
+            Beauty at Your Doorstep
+          </HeroTitle>
+          <HeroSubtitle>
+            Professional salon services in the comfort of your home
+          </HeroSubtitle>
+          <ButtonGroup>
+            <PrimaryButton variant="contained" onClick={handleBookService}>
+              Book Service
+            </PrimaryButton>
+            <SecondaryButton variant="outlined">
+              Shop Products
+            </SecondaryButton>
+          </ButtonGroup>
+        </ContentWrapper>
+      </HeroSection>
+    </Box>
   );
 }
 
