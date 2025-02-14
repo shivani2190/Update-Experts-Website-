@@ -629,15 +629,15 @@ const ServiceDetails = () => {
           "Hair should be at least ¼ inch long (about the size of a grain of rice) for best results.",
           "Aloe Vera wax is gentler on sensitive skin and provides a soothing effect compared to regular wax.",
           "Avoid applying lotions, oils, or creams before the waxing session.",
-          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on any skin medication.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on medication like retinoids.",
           "Some mild redness or sensitivity may occur but typically fades within a few hours.",
           "Choose a clean, comfortable, and well-ventilated space for the best waxing experience."
         ],
         afterCare: [
-          "Avoid hot showers, steam, swimming, and exercise for at least 24 hours to prevent irritation.",
+          "Avoid hot showers, steam, swimming, and workouts for at least 24 hours to prevent irritation.",
           "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
           "Apply pure Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
-          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs, but avoid harsh scrubbing.",
+          "Exfoliate the waxed area after 48 hours to prevent ingrown hairs, but do so gently.",
           "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least a day.",
           "Stay hydrated and keep the skin moisturized for long-lasting smoothness."
         ]
@@ -664,15 +664,15 @@ const ServiceDetails = () => {
           "Hair should be at least ¼ inch long (about the size of a grain of rice) for best results.",
           "Aloe Vera wax is gentler on sensitive skin and provides a soothing effect compared to regular wax.",
           "Avoid applying lotions, oils, or creams before the waxing session.",
-          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on any skin medication.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on medication like retinoids.",
           "Some mild redness or sensitivity may occur but typically fades within a few hours.",
           "Choose a clean, comfortable, and well-ventilated space for the best waxing experience."
         ],
         afterCare: [
-          "Avoid hot showers, steam, swimming, and exercise for at least 24 hours to prevent irritation.",
+          "Avoid hot showers, steam, swimming, and workouts for at least 24 hours to prevent irritation.",
           "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
           "Apply pure Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
-          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs, but avoid harsh scrubbing.",
+          "Exfoliate the waxed area after 48 hours to prevent ingrown hairs, but do so gently.",
           "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least a day.",
           "Stay hydrated and keep the skin moisturized for long-lasting smoothness."
         ]
@@ -699,15 +699,15 @@ const ServiceDetails = () => {
           "Hair should be at least ¼ inch long (about the size of a grain of rice) for best results.",
           "Aloe Vera wax is gentler on sensitive skin and provides a soothing effect compared to regular wax.",
           "Avoid applying lotions, oils, or creams before the waxing session.",
-          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on any skin medication.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on medication like retinoids.",
           "Some mild redness or sensitivity may occur but typically fades within a few hours.",
           "Choose a clean, comfortable, and well-ventilated space for the best waxing experience."
         ],
         afterCare: [
-          "Avoid hot showers, steam, swimming, and exercise for at least 24 hours to prevent irritation.",
+          "Avoid hot showers, steam, swimming, and workouts for at least 24 hours to prevent irritation.",
           "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
           "Apply pure Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
-          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs, but avoid harsh scrubbing.",
+          "Exfoliate the waxed area after 48 hours to prevent ingrown hairs, but do so gently.",
           "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least a day.",
           "Stay hydrated and keep the skin moisturized for long-lasting smoothness."
         ]
@@ -734,15 +734,15 @@ const ServiceDetails = () => {
           "Hair should be at least ¼ inch long (about the size of a grain of rice) for best results.",
           "Aloe Vera wax is gentler on sensitive skin and provides a soothing effect compared to regular wax.",
           "Avoid applying lotions, oils, or creams before the waxing session.",
-          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on any skin medication.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are on medication like retinoids.",
           "Some mild redness or sensitivity may occur but typically fades within a few hours.",
           "Choose a clean, comfortable, and well-ventilated space for the best waxing experience."
         ],
         afterCare: [
-          "Avoid hot showers, steam, swimming, and exercise for at least 24 hours to prevent irritation.",
+          "Avoid hot showers, steam, swimming, and workouts for at least 24 hours to prevent irritation.",
           "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
           "Apply pure Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
-          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs, but avoid harsh scrubbing.",
+          "Exfoliate the waxed area after 48 hours to prevent ingrown hairs, but do so gently.",
           "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least a day.",
           "Stay hydrated and keep the skin moisturized for long-lasting smoothness."
         ]
@@ -760,7 +760,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -796,7 +796,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -832,7 +832,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -868,7 +868,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -904,7 +904,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -940,7 +940,7 @@ const ServiceDetails = () => {
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
-          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adhesion.",
+          "The therapist will cleanse the area to remove oil, sweat, or dirt for better wax adherence.",
           "Warm wax will be applied in sections, following the natural hair growth pattern, and removed swiftly for minimal discomfort.",
           "A soothing post-wax gel or lotion will be applied to reduce redness and irritation.",
           "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
@@ -1105,8 +1105,8 @@ const ServiceDetails = () => {
       },
       {
         id: 31,
-        name: "Full Arms, Half Legs & Underarms (Normal)",
-        description: "Choco waxing - Full Arms, Half Legs & Underarms (Normal)",
+        name: "Full Arms, Half legs, Underarms",
+        description: "Choco waxing - Full Arms, Half legs, Underarms",
         originalPrice: 800,
         discountedPrice: 300,
         duration: 30,
@@ -1278,9 +1278,993 @@ const ServiceDetails = () => {
           "Keep the skin moisturized and hydrated for long-lasting smoothness."
         ]
       },
-      
-
-  ];
+      {
+        id: 36,
+        name: "Half Legs",
+        description: "Honey waxing - Half Legs",
+        originalPrice: 299,
+        discountedPrice: 199,
+        duration: 15,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p36.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 37,
+        name: "Full Back",
+        description: "Honey waxing - Full Back",
+        originalPrice: 299,
+        discountedPrice: 199,
+        duration: 15,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p37.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 38,
+        name: "Stomach (Tummy)",
+        description: "Honey waxing - Stomach (Tummy)",
+        originalPrice: 250,
+        discountedPrice: 150,
+        duration: 15,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p38.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 39,
+        name: "Bikini Line + Butt",
+        description: "Honey waxing - Bikini Line + Butt",
+        originalPrice: 450,
+        discountedPrice: 350,
+        duration: 20,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p39.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 40,
+        name: "Bikni",
+        description: "Honey waxing - Bikni",
+        originalPrice: 1199,
+        discountedPrice: 599,
+        duration: 25,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p40.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 41,
+        name: "Bikini + Butt",
+        description: "Honey waxing - Bikini + Butt",
+        originalPrice: 999,
+        discountedPrice: 649,
+        duration: 35,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p41.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 42,
+        name: "Full Body(Excld.Bikni)",
+        description: "Honey waxing - Full Body (Excld.Bikni)",
+        originalPrice: 1199,
+        discountedPrice: 999,
+        duration: 90,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p42.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 43,
+        name: "Full Body + Bikini",
+        description: "Honey waxing - Full Body + Bikini",
+        originalPrice: 1599,
+        discountedPrice: 1299,
+        duration: 110,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p43.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 44,
+        name: "Full Arms, Half legs, Underarms",
+        description: "Honey waxing - Full Arms, Half legs, Underarms",
+        originalPrice: 694,
+        discountedPrice: 399,
+        duration: 50,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p44.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 45,
+        name: "Full arms & Underarms",
+        description: "Honey waxing - Full arms & Underarms",
+        originalPrice: 550,
+        discountedPrice: 258,
+        duration: 30,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p45.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 46,
+        name: "Half Arms, Half Legs & Underarms",
+        description: "Honey waxing - Half Arms, Half Legs & Underarms",
+        originalPrice: 500,
+        discountedPrice: 320,
+        duration: 30,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p46.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 47,
+        name: "Full arms & Underarms",
+        description: "Honey waxing - Full arms & Underarms",
+        originalPrice: 550,
+        discountedPrice: 258,
+        duration: 30,
+        type: "Honey",
+        category: "Waxing",
+        image: "/assets/category/p47.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
+          "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm natural honey-infused wax will be applied in the direction of hair growth and removed using waxing strips.",
+          "A soothing post-wax lotion or gel will be applied to reduce redness and keep the skin hydrated.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+          "Honey wax is gentle on the skin and has antibacterial properties, making it ideal for sensitive skin.",
+          "Avoid applying lotions, oils, or creams before the waxing session.",
+          "Inform the therapist if you have skin allergies, infections, sunburn, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation may occur but usually fades within a few hours.",
+          "Choose a clean and well-lit space for the best waxing experience."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and exercise for 24 hours to prevent irritation.",
+          "Wear loose, breathable clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate the waxed area after 48 hours using a mild scrub to prevent ingrown hairs.",
+          "Avoid perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Keep the skin moisturized and hydrated for long-lasting smoothness."
+        ]
+      },
+      {
+        id: 48,
+        name: "BIKNI",
+        description: "Liposoluble waxing - BIKNI",
+        originalPrice: 1500,
+        discountedPrice: 649,
+        duration: 20,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p48.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+      {
+        id: 49,
+        name: "Full Arms",
+        description: "Liposoluble waxing - Full Arms",
+        originalPrice: 450,
+        discountedPrice: 295,
+        duration: 20,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p49.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+      {
+        id: 50,
+        name: "Full Legs",
+        description: "Liposoluble waxing - Full Legs",
+        originalPrice: 550,
+        discountedPrice: 395,
+        duration: 25,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p50.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+      {
+        id: 51,
+        name: "Underarms",
+        description: "Liposoluble waxing - Underarms",
+        originalPrice: 120,
+        discountedPrice: 70,
+        duration: 10,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p51.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+      {
+        id: 52,
+        name: "Full Arms, Full Legs, Underarms",
+        description: "Liposoluble waxing - Full Arms, Full Legs, Underarms",
+        originalPrice: 1150,
+        discountedPrice: 750,
+        duration: 50,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p52.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+      {
+        id: 53,
+        name: "Full arms, Half Legs and Underarms",
+        description: "Liposoluble waxing - Full arms, Half Legs and Underarms",
+        originalPrice: 1200,
+        discountedPrice: 599,
+        duration: 35,
+        type: "liposoluble",
+        category: "Waxing",
+        image: "/assets/category/p53.jpg",
+        process: [
+          "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+          "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+          "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+          "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+          "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+          "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+        ],
+        preServiceInstructions: [
+          "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+          "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+          "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+          "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+          "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+          "Some temporary redness or mild irritation is normal and subsides within a few hours."
+        ],
+        afterCare: [
+          "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+          "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+          "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+          "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+          "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+          "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+        ]
+      },
+    {
+      id: 54,
+      name: "Half legs",
+      description: "Liposoluble waxing - Half legs",
+      originalPrice: 350,
+      discountedPrice: 225,
+      duration: 20,
+      type: "liposoluble",
+      category: "Waxing",
+      image: "/assets/category/p54.jpg",
+      process: [
+        "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+        "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+        "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+        "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+        "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+        "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+        "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+        "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+        "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+        "Some temporary redness or mild irritation is normal and subsides within a few hours."
+      ],
+      afterCare: [
+        "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+        "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+        "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+        "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+      ]
+    },
+    {
+      id: 55,
+      name: "Full Body (excld.Bikni)",
+      description: "Liposoluble waxing - Full Body (excld.Bikni)",
+      originalPrice: 2400,
+      discountedPrice: 1100,
+      duration: 90,
+      type: "liposoluble",
+      category: "Waxing",
+      image: "/assets/category/p55.jpg",
+      process: [
+        "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+        "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+        "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+        "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+        "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+        "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+        "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+        "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+        "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+        "Some temporary redness or mild irritation is normal and subsides within a few hours."
+      ],
+      afterCare: [
+        "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+        "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+        "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+        "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+      ]
+    },
+    {
+      id: 56,
+      name: "Full Arms & Underarms",
+      description: "Liposoluble waxing - Full Arms & Underarms",
+      originalPrice: 700,
+      discountedPrice: 385,
+      duration: 30,
+      type: "liposoluble",
+      category: "Waxing",
+      image: "/assets/category/p56.jpg",
+      process: [
+        "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+        "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+        "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+        "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+        "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+        "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+        "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+        "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+        "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+        "Some temporary redness or mild irritation is normal and subsides within a few hours."
+      ],
+      afterCare: [
+        "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+        "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+        "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+        "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+      ]
+    },
+    {
+      id: 57,
+      name: "Full Body + Bikni",
+      description: "Liposoluble waxing - Full Body + Bikni",
+      originalPrice: 2500,
+      discountedPrice: 1699,
+      duration: 90,
+      type: "liposoluble",
+      category: "Waxing",
+      image: "/assets/category/p57.jpg",
+      process: [
+        "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
+        "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
+        "The therapist will cleanse the area to remove oil, dirt, and sweat for better wax adherence.",
+        "Warm liposoluble wax, enriched with natural oils and resin, will be applied in the direction of hair growth and removed using a strip-less technique or soft strips, depending on the type.",
+        "A soothing post-wax lotion or oil will be applied to nourish and hydrate the skin, reducing redness.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for the best results.",
+        "Liposoluble wax is gentler than regular wax, making it ideal for sensitive skin and delicate areas.",
+        "This wax is enriched with natural oils (like argan, olive, or almond oil) and does not require pre-heating at high temperatures, reducing the risk of burns.",
+        "Avoid applying lotions, oils, or creams before waxing to ensure better grip.",
+        "Inform the therapist if you have skin conditions, sunburn, cuts, or are using retinoid-based medications.",
+        "Some temporary redness or mild irritation is normal and subsides within a few hours."
+      ],
+      afterCare: [
+        "Avoid hot showers, saunas, swimming, and intense workouts for at least 24 hours to prevent irritation.",
+        "Wear loose, breathable cotton clothing to minimize friction on waxed skin.",
+        "Apply Aloe Vera gel, post-wax oil, or a fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate after 48 hours with a mild scrub to prevent ingrown hairs but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based toners on waxed areas for at least 24 hours.",
+        "Stay hydrated and moisturize daily to maintain soft, smooth skin."
+      ]
+    },
+    {
+      id: 58,
+      name: "Full Arms",
+      description: "Waxing(Only Services) - Full Arms",
+      originalPrice: 300,
+      discountedPrice: 150,
+      duration: 20,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p58.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    },
+    {
+      id: 59,
+      name: "Full Legs",
+      description: "Waxing(Only Services) - Full Legs",
+      originalPrice: 400,
+      discountedPrice: 199,
+      duration: 25,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p59.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    },
+    {
+      id: 60,
+      name: "Underarms",
+      description: "Waxing(Only Services) - Underarms",
+      originalPrice: 90,
+      discountedPrice: 50,
+      duration: 10,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p60.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    },
+    {
+      id: 61,
+      name: "Full Arms & Underarms",
+      description: "Waxing(Only Services) - Full Arms & Underarms",
+      originalPrice: 400,
+      discountedPrice: 258,
+      duration: 30,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p61.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    },
+    {
+      id: 62,
+      name: "Full arms, Full legs and Underarms",
+      description: "Waxing(Only Services) - Full arms, Full legs and Underarms",
+      originalPrice: 750,
+      discountedPrice: 390,
+      duration: 50,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p62.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    },
+    {
+      id: 63,
+      name: "Full Arms, Half legs & Underarms",
+      description: "Waxing(Only Services) - Full Arms, Half legs & Underarms",
+      originalPrice: 500,
+      discountedPrice: 350,
+      duration: 30,
+      type: "Waxing(Only Services)",
+      category: "Waxing",
+      image: "/assets/category/p63.jpg",
+      process: [
+        "A professional beautician will arrive at your home to perform the waxing service.",
+        "The customer must provide the wax, strips, and other required products for the service.",
+        "The beautician will begin by cleansing the area to remove oil, dirt, and sweat for better wax adherence.",
+        "The provided wax will be applied in the direction of hair growth and removed using strips or the appropriate method.",
+        "Post-wax, a soothing gel or lotion (if provided by the customer) will be applied to calm the skin.",
+        "A charge of ₹90 will be added for disposable items used during the service.",
+        "AC is highly recommened for waxing services durring summers, monsoon & even in winters."
+      ],
+      preServiceInstructions: [
+        "Ensure you have all the necessary waxing products (wax, strips, spatula, pre/post-wax care products, etc.).",
+        "Hair should be at least ¼ inch long (about the size of a grain of rice) for effective waxing.",
+        "Avoid applying lotions, oils, or creams to the skin before waxing.",
+        "Inform the beautician if you have skin sensitivities, allergies, infections, or are on medications like retinoids.",
+        "Some redness or mild irritation may occur but typically fades within a few hours.",
+        "Select a clean and comfortable space for the best waxing experience."
+      ],
+      afterCare: [
+        "Avoid hot showers, steam, swimming, and exercise for at least 24 hours post-waxing.",
+        "Wear loose, breathable cotton clothing to prevent irritation.",
+        "Apply Aloe Vera gel or a mild, fragrance-free moisturizer to soothe and hydrate the skin.",
+        "Exfoliate the area after 48 hours to prevent ingrown hairs, but avoid harsh scrubbing.",
+        "Do not use perfumed products, deodorants, or alcohol-based lotions on waxed skin for at least 24 hours.",
+        "Keep the skin hydrated and moisturized for long-lasting smoothness."
+      ]
+    }
+    ];
 
   const serviceData = servicesData.find(service => service.id === parseInt(id));
 
