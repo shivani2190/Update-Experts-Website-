@@ -10,6 +10,7 @@ const ServiceCard = styled(Card)(({ theme }) => ({
   transition: 'transform 0.2s',
   borderRadius: '8px',
   backgroundColor: '#fff',
+  border: '1px solid #e0e0e0',
   '&:hover': {
     transform: 'translateY(-5px)',
     boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
@@ -24,11 +25,11 @@ const AddButton = styled(Button)(({ theme }) => ({
   height: '32px',
   borderRadius: '16px',
   textTransform: 'none',
-  backgroundColor: theme.palette.primary.main,
-  color: 'white',
+  backgroundColor: '#000000',
+  color: '#ffffff',
   boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   '&:hover': {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: '#333333',
   },
   [theme.breakpoints.down('sm')]: {
     minWidth: '60px',
@@ -75,7 +76,7 @@ const OtherServices = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 4, sm: 6 }, backgroundColor: '#f5f5f5', position: 'relative' }}>
+    <Box sx={{ py: { xs: 4, sm: 6 }, backgroundColor: '#ffffff', position: 'relative' }}>
       <Container maxWidth="lg">
         <Typography 
           variant={isMobile ? "h4" : "h3"} 
@@ -85,7 +86,7 @@ const OtherServices = () => {
           sx={{ 
             mb: { xs: 3, sm: 4 },
             fontWeight: 600,
-            color: '#333'
+            color: '#000000'
           }}
         >
           Our Additional Services
@@ -102,7 +103,8 @@ const OtherServices = () => {
                         width: '80px',
                         height: '80px',
                         borderRadius: '8px',
-                        marginRight: 2
+                        marginRight: 2,
+                        filter: 'grayscale(100%)'
                       }}
                       image={service.image}
                       alt={service.title}
@@ -114,22 +116,24 @@ const OtherServices = () => {
                         sx={{ 
                           fontWeight: 600,
                           mb: 0.5,
-                          color: '#333'
+                          color: '#000000'
                         }}
                       >
                         {service.title}
                       </Typography>
                       <Typography 
                         variant="body2" 
-                        color="text.secondary"
-                        sx={{ mb: 1 }}
+                        sx={{ 
+                          mb: 1,
+                          color: '#666666'
+                        }}
                       >
                         {service.description}
                       </Typography>
                       <Typography 
                         variant="subtitle1"
                         sx={{ 
-                          color: theme.palette.primary.main,
+                          color: '#000000',
                           fontWeight: 600
                         }}
                       >

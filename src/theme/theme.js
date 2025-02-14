@@ -3,18 +3,22 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#8B7355',
-      light: '#D4C4A8',
-      dark: '#5C4D3A',
+      main: '#000000',
+      light: '#333333',
+      dark: '#000000',
     },
     secondary: {
-      main: '#F5F5DC',
+      main: '#FFFFFF',
       light: '#FFFFFF',
-      dark: '#E5E5CC',
+      dark: '#F5F5F5',
     },
     background: {
       default: '#FFFFFF',
       paper: '#F5F5F5',
+    },
+    text: {
+      primary: '#000000',
+      secondary: '#666666',
     },
   },
   typography: {
@@ -58,6 +62,21 @@ const theme = createTheme({
         root: {
           borderRadius: '8px',
           padding: '8px 24px',
+        },
+        contained: {
+          backgroundColor: '#000000',
+          color: '#FFFFFF',
+          '&:hover': {
+            backgroundColor: '#333333',
+          },
+        },
+        outlined: {
+          borderColor: '#000000',
+          color: '#000000',
+          '&:hover': {
+            borderColor: '#333333',
+            backgroundColor: 'rgba(0, 0, 0, 0.04)',
+          },
         },
       },
     },

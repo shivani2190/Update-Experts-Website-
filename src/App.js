@@ -17,11 +17,12 @@ import TrendingServices from './components/TrendingServices';
 import TrendingNearYou from './components/TrendingNearYou';
 import WhatsNew from './components/WhatsNew';
 import Cart from './components/Cart';
-import ServicesPage from './components/ServicesPage';
+import ServicesPage from './pages/ServicesPage';
 import BottomNavigation from './components/BottomNavigation';
 import { Box } from '@mui/material';
-import ServiceDetails from './components/ServiceDetails';
+import ServiceDetails from './pages/ServiceDetails';
 import OtherServices from './pages/OtherServices';
+import HomeSalonServices from './components/HomeSalonServices';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <TrendingServices />
               <TrendingNearYou />
               <WhatsNew />
+              <HomeSalonServices />
               <KeyFeatures />
               <SalonServices />
               <BeautyFeatures />

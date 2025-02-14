@@ -1,6 +1,109 @@
-import React, { useState } from 'react';
-import { Box, Typography, Button, Chip, Rating } from '@mui/material';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import React from 'react';
+import { Box, Container, Typography, Chip, styled, Card } from '@mui/material';
+
+const ServiceCard = styled(Box)({
+  display: 'flex',
+  width: '100%',
+  minWidth: '300px',
+  maxWidth: '380px',
+  height: '120px',
+  marginRight: '16px',
+  backgroundColor: '#fff',
+  borderRadius: '8px',
+  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+  overflow: 'hidden',
+  '@media (max-width: 600px)': {
+    minWidth: '280px',
+    maxWidth: '320px',
+  }
+});
+
+const ImageContainer = styled(Box)({
+  position: 'relative',
+  width: '120px',
+  height: '120px',
+  '&:hover .add-button': {
+    background: '#FF4D8D',
+    color: '#ffffff',
+  }
+});
+
+const ServiceImage = styled('img')({
+  width: '120px',
+  height: '120px',
+  objectFit: 'cover',
+});
+
+const AddButton = styled(Box)({
+  position: 'absolute',
+  bottom: '8px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  padding: '4px 16px',
+  borderRadius: '16px',
+  background: 'rgba(255, 255, 255, 0.9)',
+  color: '#FF4D8D',
+  border: '1px solid #FF4D8D',
+  fontWeight: 600,
+  fontSize: '0.85rem',
+  cursor: 'pointer',
+  textAlign: 'center',
+  transition: 'all 0.3s ease',
+  zIndex: 1,
+  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+});
+
+const ServiceContent = styled(Box)({
+  flex: 1,
+  padding: '12px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  minWidth: 0, // This helps with text truncation
+});
+
+const ServiceTitle = styled(Typography)({
+  fontWeight: 600,
+  fontSize: '1rem',
+  marginBottom: '4px',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
+
+const ServiceDescription = styled(Typography)({
+  color: '#666',
+  fontSize: '0.85rem',
+  marginBottom: '8px',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
+
+const PriceContainer = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  marginTop: 'auto',
+});
+
+const Duration = styled(Typography)({
+  color: '#666',
+  fontSize: '0.85rem',
+  marginLeft: 'auto',
+});
+
+const DiscountTag = styled(Box)({
+  position: 'absolute',
+  top: 12,
+  right: 12,
+  background: '#4CAF50',
+  color: '#fff',
+  padding: '2px 6px',
+  borderRadius: '4px',
+  fontSize: '0.75rem',
+  fontWeight: 500,
+});
 
 const categories = [
   { id: 1, name: 'Waxing', active: true },
@@ -18,7 +121,7 @@ const services = [
     id: 1,
     name: 'Rica Roll-On - Waxing',
     description: 'Full Arms + Full Legs + Underarms',
-    image: '/assets/services/rica-waxing.jpg',
+    image: '/assets/category/p7.jpg',
     price: 899,
     originalPrice: 1599,
     duration: '1hr 5mins',
@@ -31,7 +134,7 @@ const services = [
     id: 2,
     name: 'Rica Roll-On - Waxing',
     description: 'Full Arms + Underarms',
-    image: '/assets/services/rica-waxing-2.jpg',
+    image: '/assets/category/p5.jpg',
     price: 499,
     originalPrice: 799,
     duration: '30mins',
@@ -44,7 +147,7 @@ const services = [
     id: 3,
     name: 'Classic Manicure & Pedicure',
     description: 'Relaxing hand & foot treatment',
-    image: '/assets/services/mani-pedi.jpg',
+    image: '/assets/category/p7.jpg',
     price: 799,
     originalPrice: 1299,
     duration: '1hr 15mins',
@@ -57,7 +160,7 @@ const services = [
     id: 4,
     name: 'Diamond Facial',
     description: 'Premium facial for glowing skin',
-    image: '/assets/services/facial.jpg',
+    image: '/assets/category/p3.jpg',
     price: 1299,
     originalPrice: 2499,
     duration: '1hr',
@@ -70,7 +173,7 @@ const services = [
     id: 5,
     name: 'Hair Spa Treatment',
     description: 'Deep conditioning & head massage',
-    image: '/assets/services/hair-spa.jpg',
+    image: '/assets/category/p4.jpg',
     price: 999,
     originalPrice: 1799,
     duration: '45mins',
@@ -82,238 +185,93 @@ const services = [
 ];
 
 const TrendingNearYou = () => {
-  const [activeCategory, setActiveCategory] = useState('Waxing');
+  const [activeCategory, setActiveCategory] = React.useState('Waxing');
 
   return (
-    <Box sx={{ py: { xs: 3, md: 5 }, px: { xs: 2, md: 4 }, backgroundColor: '#fff' }}>
-      <Typography
-        variant="h6"
-        sx={{
-          fontSize: { xs: '1.25rem', md: '1.75rem' },
-          fontWeight: 600,
-          color: '#333',
-          mb: { xs: 2, md: 3 }
-        }}
-      >
-        Trending Near You
-      </Typography>
+    <Box sx={{ py: 3, backgroundColor: '#fff' }}>
+      <Container maxWidth="lg">
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 600,
+            mb: 2,
+            color: '#000000'
+          }}
+        >
+          Trending Near You
+        </Typography>
 
-      <Box sx={{ 
-        display: 'flex', 
-        gap: 1.5, 
-        mb: 3, 
-        overflowX: 'auto', 
-        pb: 1,
-        '&::-webkit-scrollbar': {
-          height: '6px',
-        },
-        '&::-webkit-scrollbar-track': {
-          background: '#f1f1f1',
-          borderRadius: '10px',
-        },
-        '&::-webkit-scrollbar-thumb': {
-          background: '#FF4D8D',
-          borderRadius: '10px',
-        }
-      }}>
-        {categories.map((category) => (
-          <Chip 
-            key={category.id}
-            label={category.name}
-            onClick={() => setActiveCategory(category.name)}
-            sx={{ 
-              backgroundColor: category.name === activeCategory ? '#FFE4ED' : '#f5f5f5',
-              color: category.name === activeCategory ? '#FF4D8D' : '#666',
-              fontWeight: 500,
-              borderRadius: '16px',
-              px: 1,
-              '&:hover': {
-                backgroundColor: category.name === activeCategory ? '#FFE4ED' : '#f0f0f0',
-                transform: 'translateY(-1px)',
-              },
-              transition: 'all 0.2s ease'
-            }}
-          />
-        ))}
-      </Box>
-
-      <Box sx={{ 
-        display: 'flex', 
-        gap: 2.5, 
-        overflowX: 'auto', 
-        pb: 1,
-        '&::-webkit-scrollbar': {
-          height: '6px',
-        },
-        '&::-webkit-scrollbar-track': {
-          background: '#f1f1f1',
-          borderRadius: '10px',
-        },
-        '&::-webkit-scrollbar-thumb': {
-          background: '#FF4D8D',
-          borderRadius: '10px',
-        }
-      }}>
-        {services.map((service) => (
-          <Box
-            key={service.id}
-            sx={{
-              minWidth: { xs: '280px', md: '320px' },
-              maxWidth: { xs: '280px', md: '320px' },
-              borderRadius: '16px',
-              overflow: 'hidden',
-              backgroundColor: '#fff',
-              position: 'relative',
-              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-4px)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
-              }
-            }}
-          >
-            <Box
+        <Box sx={{ display: 'flex', gap: 1, mb: 3, overflowX: 'auto', pb: 1 }}>
+          {categories.map((category) => (
+            <Chip
+              key={category.id}
+              label={category.name}
+              onClick={() => setActiveCategory(category.name)}
               sx={{
-                position: 'absolute',
-                top: 12,
-                left: 12,
-                backgroundColor: '#4A2B29',
-                color: '#fff',
-                py: 0.5,
-                px: 1.5,
-                borderRadius: '20px',
-                fontSize: '0.75rem',
+                background: category.name === activeCategory ? 'rgba(255, 77, 141, 0.1)' : '#F5F5F5',
+                color: category.name === activeCategory ? '#FF4D8D' : '#666666',
                 fontWeight: 500,
-                zIndex: 1
-              }}
-            >
-              {service.tag}
-            </Box>
-
-            <Box
-              component="img"
-              src={service.image}
-              alt={service.name}
-              sx={{
-                width: '100%',
-                height: '200px',
-                objectFit: 'cover',
-                transition: 'transform 0.3s ease',
+                borderRadius: '20px',
                 '&:hover': {
-                  transform: 'scale(1.05)',
+                  background: category.name === activeCategory ? 'rgba(255, 77, 141, 0.2)' : '#EEEEEE',
                 }
               }}
             />
+          ))}
+        </Box>
 
-            <Box sx={{ p: 2.5 }}>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  color: '#333',
-                  mb: 0.5,
-                  height: '2.6em',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical'
-                }}
-              >
-                {service.name}
-              </Typography>
-
-              <Typography
-                variant="body2"
-                sx={{
-                  color: '#666',
-                  mb: 1.5,
-                  fontSize: '0.875rem',
-                  height: '1.5em',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                {service.description}
-              </Typography>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                <Rating value={service.rating} precision={0.1} size="small" readOnly />
-                <Typography sx={{ color: '#666', fontSize: '0.875rem' }}>
-                  ({service.reviews.toLocaleString()})
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            overflowX: 'auto',
+            gap: 2,
+            pb: 1,
+            '::-webkit-scrollbar': {
+              display: 'none'
+            },
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+          }}
+        >
+          {services.map((service) => (
+            <ServiceCard key={service.id}>
+              <ImageContainer>
+                <ServiceImage
+                  src={service.image}
+                  alt={service.name}
+                />
+                <AddButton className="add-button">ADD</AddButton>
+              </ImageContainer>
+              <ServiceContent>
                 <Box>
+                  <ServiceTitle>
+                    {service.name}
+                  </ServiceTitle>
+                  <ServiceDescription>
+                    {service.description}
+                  </ServiceDescription>
+                </Box>
+                <PriceContainer>
                   <Typography
                     sx={{
-                      fontSize: '1.25rem',
                       fontWeight: 600,
+                      fontSize: '1rem',
                       color: '#333',
-                      display: 'inline-block',
-                      mr: 1
+                      display: 'inline',
                     }}
                   >
                     ₹{service.price}
                   </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: '0.875rem',
-                      color: '#999',
-                      textDecoration: 'line-through',
-                      display: 'inline-block'
-                    }}
-                  >
-                    ₹{service.originalPrice}
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                  <AccessTimeIcon sx={{ fontSize: '1rem', color: '#666' }} />
-                  <Typography
-                    sx={{
-                      fontSize: '0.875rem',
-                      color: '#666'
-                    }}
-                  >
+                  <Duration>
                     {service.duration}
-                  </Typography>
-                </Box>
-                <Typography
-                  sx={{
-                    fontSize: '0.875rem',
-                    color: '#4CAF50',
-                    fontWeight: 500
-                  }}
-                >
-                  {service.discount}
-                </Typography>
-              </Box>
-
-              <Button
-                variant="contained"
-                fullWidth
-                sx={{
-                  backgroundColor: '#FF4D8D',
-                  color: '#fff',
-                  borderRadius: '25px',
-                  textTransform: 'none',
-                  height: '40px',
-                  fontSize: '0.9rem',
-                  fontWeight: 500,
-                  '&:hover': {
-                    backgroundColor: '#FF1F71',
-                  }
-                }}
-              >
-                Book Now
-              </Button>
-            </Box>
-          </Box>
-        ))}
-      </Box>
+                  </Duration>
+                </PriceContainer>
+                <DiscountTag>{service.discount}% Off</DiscountTag>
+              </ServiceContent>
+            </ServiceCard>
+          ))}
+        </Box>
+      </Container>
     </Box>
   );
 };
