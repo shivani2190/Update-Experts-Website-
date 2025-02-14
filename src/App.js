@@ -10,16 +10,24 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import BeautyFeatures from './components/BeautyFeatures';
 import KeyFeatures from './components/KeyFeatures';
-import SalonServices from './components/SalonServices';
+import RecommendedPackages from './components/RecommendedPackages';
+// import SalonServices from './components/SalonServices';
+import Packages from './components/Packages';
 import HowItWorks from './components/HowItWorks';
 import Brands from './components/Brands';
+import TrendingServices from './components/TrendingServices';
+import TrendingNearYou from './components/TrendingNearYou';
+import WhatsNew from './components/WhatsNew';
 import TrendingServices from './components/TrendingServices';
 import TrendingNearYou from './components/TrendingNearYou';
 import WhatsNew from './components/WhatsNew';
 import Cart from './components/Cart';
 import ServicesPage from './components/ServicesPage';
 import BottomNavigation from './components/BottomNavigation';
+import ServicesPage from './components/ServicesPage';
+import BottomNavigation from './components/BottomNavigation';
 import { Box } from '@mui/material';
+import ServiceDetails from './components/ServiceDetails';
 import ServiceDetails from './components/ServiceDetails';
 
 function App() {
@@ -28,6 +36,8 @@ function App() {
       <CssBaseline />
       <Box sx={{ 
         backgroundColor: theme.palette.background.default,
+        minHeight: '100vh',
+        pb: { xs: 7, md: 0 } // Add padding bottom for mobile to account for bottom navigation
         minHeight: '100vh',
         pb: { xs: 7, md: 0 } // Add padding bottom for mobile to account for bottom navigation
       }}>
@@ -41,19 +51,22 @@ function App() {
               <TrendingNearYou />
               <WhatsNew />
               <KeyFeatures />
-              <SalonServices />
+              {/* <SalonServices /> */}
+              <Packages />
+              <RecommendedPackages />
               <BeautyFeatures />
               <HowItWorks />
               <Brands />
               <Testimonials />
             </>
           } />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:id" element={<ServiceDetails />} />
         </Routes>
         <Footer />
-        <BottomNavigation />
       </Box>
     </ThemeProvider>
   );
