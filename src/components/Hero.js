@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Typography, Box, Button, Grid, styled, useTheme, useMediaQuery, IconButton } from '@mui/material';
+import React from 'react';
+import { Box, Typography, Button, styled } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const fadeIn = keyframes`
@@ -112,78 +111,17 @@ const SecondaryButton = styled(Button)(({ theme }) => ({
   border: '2px solid #ffffff',
   transition: 'all 0.3s ease',
   '&:hover': {
-    backgroundColor: '#FF69B4',
-  }
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    transform: 'translateY(-2px)',
+    boxShadow: '0 6px 8px rgba(0, 0, 0, 0.1)',
+  },
 }));
 
-const Hero = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-  const [currentSlide, setCurrentSlide] = useState(0);
+function Hero() {
+  const navigate = useNavigate();
 
-  const offers = [
-    { 
-      type: 'card',
-      style: { backgroundColor: '#4A0D4A' },
-      title: 'FREE PEDICURE',
-      mainService: 'WAXING + BLEACH + THREAD WORK',
-      details: [
-        'Full Arms, Legs and UA',
-        // 'BLEACH + THREAD WORK',
-        'Face & Neck'
-      ],
-      prices: [
-        '₹775/- (Honey wax)',
-        '₹1099/- (Rica wax)'
-      ]
-    },
-    {
-      type: 'card',
-      style: { backgroundColor: '#8B008B' },
-      title: 'SALON PACKAGE',
-      mainService: 'UPTO 60% OFF + Free BIKINI',
-      details: [
-        'Facial: VLCC',
-        'Choco wax: Full Arms & Underarms',
-        'Choco wax: Full Legs',
-        'Basic Mani-Pedi combo',
-        'Bleach(oxy) Face | Thread Work'
-      ],
-      price: '₹1642/-',
-      tag: 'ALL IN JUST'
-    },
-    {
-      type: 'card',
-      style: { backgroundColor: '#FF1493' },
-      title: 'RICA WAXING',
-      details: [
-        'FULL ARMS | FULL LEGS | UNDERARMS',
-        'FREE THREADING + BLEACH'
-      ],
-      price: '₹897/-',
-      originalPrice: '₹1600',
-      buttonText: 'BOOK NOW'
-    },
-    {
-      type: 'card',
-      style: { backgroundColor: '#FFD700', color: '#000000' },
-      title: 'Festive Deals',
-      subTitle: 'BIG SALE',
-      details: [
-        '₹100/- Off on 1st Booking',
-        'Use Code: TE100'
-      ],
-      tag: 'UP TO 50% OFF'
-    }
-  ];
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? offers.length - 1 : prev - 1));
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev === offers.length - 1 ? 0 : prev + 1));
+  const handleBookService = () => {
+    navigate('/services');
   };
 
   return (
