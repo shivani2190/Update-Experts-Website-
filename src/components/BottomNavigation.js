@@ -2,10 +2,10 @@ import React from 'react';
 import { Paper, BottomNavigation as MuiBottomNavigation, BottomNavigationAction, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
-import ShareIcon from '@mui/icons-material/Share';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import WomanIcon from '@mui/icons-material/Woman';
+import { Store, HomeOutlined, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
 
 const StyledBottomNavigation = styled(MuiBottomNavigation)(({ theme }) => ({
   position: 'fixed',
@@ -45,10 +45,10 @@ const BottomNavigation = () => {
           to="/"
         />
         <BottomNavigationAction 
-          label="Refer" 
-          icon={<ShareIcon />} 
+          label="Store" 
+          icon={<Store />} 
           component={Link} 
-          to="/refer"
+          to="/store"
         />
         <BottomNavigationAction 
           label="Cart" 

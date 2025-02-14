@@ -385,7 +385,7 @@ const ServiceDetails = () => {
         duration: 40,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p13.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -418,7 +418,7 @@ const ServiceDetails = () => {
         duration: 90,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p14.jpg",
+        image: "/assets/category/p2.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -451,7 +451,7 @@ const ServiceDetails = () => {
         duration: 110,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p15.jpg",
+        image: "/assets/category/p3.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -484,7 +484,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p16.jpg",
+        image: "/assets/category/p4.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -517,7 +517,7 @@ const ServiceDetails = () => {
         duration: 40,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p17.jpg",
+        image: "/assets/category/p5.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -550,7 +550,7 @@ const ServiceDetails = () => {
         duration: 30,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p18.jpg",
+        image: "/assets/category/p6.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -583,7 +583,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Rica",
         category: "Waxing",
-        image: "/assets/category/p19.jpg",
+        image: "/assets/category/p7.jpg",
         process: [
           "A professional therapist will arrive at your location with all necessary waxing equipment.",
           "The session will begin with a skin assessment to determine the right wax type for you.",
@@ -616,7 +616,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Aloevera",
         category: "Waxing",
-        image: "/assets/category/p20.jpg",
+        image: "/assets/category/p8.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Aloe Vera waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Aloe Vera wax.",
@@ -651,7 +651,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Aloevera",
         category: "Waxing",
-        image: "/assets/category/p21.jpg",
+        image: "/assets/category/p9.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Aloe Vera waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Aloe Vera wax.",
@@ -686,7 +686,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Aloevera",
         category: "Waxing",
-        image: "/assets/category/p22.jpg",
+        image: "/assets/category/p10.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Aloe Vera waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Aloe Vera wax.",
@@ -721,7 +721,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Aloevera",
         category: "Waxing",
-        image: "/assets/category/p23.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Aloe Vera waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Aloe Vera wax.",
@@ -756,7 +756,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p24.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -792,7 +792,7 @@ const ServiceDetails = () => {
         duration: 5,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p25.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -828,7 +828,7 @@ const ServiceDetails = () => {
         duration: 5,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p26.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -864,7 +864,7 @@ const ServiceDetails = () => {
         duration: 10,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p27.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -900,7 +900,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p28.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -936,7 +936,7 @@ const ServiceDetails = () => {
         duration: 15,
         type: "Brazilian",
         category: "Waxing",
-        image: "/assets/category/p29.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic Brazilian waxing kit.",
           "The session will begin with a skin assessment to ensure suitability for Brazilian waxing.",
@@ -972,7 +972,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Choco",
         category: "Waxing",
-        image: "/assets/category/p30.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Choco wax kit.",
           "The session begins with a skin assessment to ensure Choco wax is suitable for your skin type.",
@@ -1007,7 +1007,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Choco",
         category: "Waxing",
-        image: "/assets/category/p31.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Choco wax kit.",
           "The session begins with a skin assessment to ensure Choco wax is suitable for your skin type.",
@@ -1042,7 +1042,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Choco",
         category: "Waxing",
-        image: "/assets/category/p32.jpg",
+        image: "/assets/category/p2.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Choco wax kit.",
           "The session begins with a skin assessment to ensure Choco wax is suitable for your skin type.",
@@ -1077,7 +1077,7 @@ const ServiceDetails = () => {
         duration: 40,
         type: "Choco",
         category: "Waxing",
-        image: "/assets/category/p33.jpg",
+        image: "/assets/category/p3.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Choco wax kit.",
           "The session begins with a skin assessment to ensure Choco wax is suitable for your skin type.",
@@ -1112,7 +1112,7 @@ const ServiceDetails = () => {
         duration: 30,
         type: "Choco",
         category: "Waxing",
-        image: "/assets/category/p34.jpg",
+        image: "/assets/category/p4.jpg",
         process: [
           "A professional therapist will arrive at your location with a hygienic Choco wax kit.",
           "The session begins with a skin assessment to ensure Choco wax is suitable for your skin type.",
@@ -1147,7 +1147,7 @@ const ServiceDetails = () => {
         duration: 10,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p35.jpg",
+        image: "/assets/category/p5.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1182,7 +1182,7 @@ const ServiceDetails = () => {
         duration: 15,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p36.jpg",
+        image: "/assets/category/p6.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1217,7 +1217,7 @@ const ServiceDetails = () => {
         duration: 10,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p37.jpg",
+        image: "/assets/category/p7.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1252,7 +1252,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p38.jpg",
+        image: "/assets/category/p8.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1287,7 +1287,7 @@ const ServiceDetails = () => {
         duration: 15,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p36.jpg",
+        image: "/assets/category/p6.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1322,7 +1322,7 @@ const ServiceDetails = () => {
         duration: 15,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p37.jpg",
+        image: "/assets/category/p7.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1357,7 +1357,7 @@ const ServiceDetails = () => {
         duration: 15,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p38.jpg",
+        image: "/assets/category/p8.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1392,7 +1392,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p39.jpg",
+        image: "/assets/category/p9.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1427,7 +1427,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p40.jpg",
+        image: "/assets/category/p4.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1462,7 +1462,7 @@ const ServiceDetails = () => {
         duration: 35,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p41.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1497,7 +1497,7 @@ const ServiceDetails = () => {
         duration: 90,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p42.jpg",
+        image: "/assets/category/p2.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1532,7 +1532,7 @@ const ServiceDetails = () => {
         duration: 110,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p43.jpg",
+        image: "/assets/category/p3.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1567,7 +1567,7 @@ const ServiceDetails = () => {
         duration: 50,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p44.jpg",
+        image: "/assets/category/p4.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1602,7 +1602,7 @@ const ServiceDetails = () => {
         duration: 30,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p45.jpg",
+        image: "/assets/category/p5.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1637,7 +1637,7 @@ const ServiceDetails = () => {
         duration: 30,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p46.jpg",
+        image: "/assets/category/p6.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1672,7 +1672,7 @@ const ServiceDetails = () => {
         duration: 30,
         type: "Honey",
         category: "Waxing",
-        image: "/assets/category/p47.jpg",
+        image: "/assets/category/p4.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic honey wax kit.",
           "The session will begin with a skin assessment to ensure honey wax is suitable for your skin type.",
@@ -1707,7 +1707,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p48.jpg",
+        image: "/assets/category/p8.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1742,7 +1742,7 @@ const ServiceDetails = () => {
         duration: 20,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p49.jpg",
+        image: "/assets/category/p9.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1777,7 +1777,7 @@ const ServiceDetails = () => {
         duration: 25,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p50.jpg",
+        image: "/assets/category/p5.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1812,7 +1812,7 @@ const ServiceDetails = () => {
         duration: 10,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p51.jpg",
+        image: "/assets/category/p1.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1847,7 +1847,7 @@ const ServiceDetails = () => {
         duration: 50,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p52.jpg",
+        image: "/assets/category/p2.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1882,7 +1882,7 @@ const ServiceDetails = () => {
         duration: 35,
         type: "liposoluble",
         category: "Waxing",
-        image: "/assets/category/p53.jpg",
+        image: "/assets/category/p3.jpg",
         process: [
           "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
           "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1917,7 +1917,7 @@ const ServiceDetails = () => {
       duration: 20,
       type: "liposoluble",
       category: "Waxing",
-      image: "/assets/category/p54.jpg",
+      image: "/assets/category/p4.jpg",
       process: [
         "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
         "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1952,7 +1952,7 @@ const ServiceDetails = () => {
       duration: 90,
       type: "liposoluble",
       category: "Waxing",
-      image: "/assets/category/p55.jpg",
+      image: "/assets/category/p5.jpg",
       process: [
         "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
         "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -1987,7 +1987,7 @@ const ServiceDetails = () => {
       duration: 30,
       type: "liposoluble",
       category: "Waxing",
-      image: "/assets/category/p56.jpg",
+      image: "/assets/category/p6.jpg",
       process: [
         "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
         "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -2022,7 +2022,7 @@ const ServiceDetails = () => {
       duration: 90,
       type: "liposoluble",
       category: "Waxing",
-      image: "/assets/category/p57.jpg",
+      image: "/assets/category/p7.jpg",
       process: [
         "A professional waxing expert will arrive at your home with a hygienic liposoluble wax kit.",
         "The session begins with a skin assessment to determine suitability for liposoluble waxing.",
@@ -2057,7 +2057,7 @@ const ServiceDetails = () => {
       duration: 20,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p58.jpg",
+      image: "/assets/category/p8.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
@@ -2093,7 +2093,7 @@ const ServiceDetails = () => {
       duration: 25,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p59.jpg",
+      image: "/assets/category/p9.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
@@ -2129,7 +2129,7 @@ const ServiceDetails = () => {
       duration: 10,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p60.jpg",
+      image: "/assets/category/p6.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
@@ -2165,7 +2165,7 @@ const ServiceDetails = () => {
       duration: 30,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p61.jpg",
+      image: "/assets/category/p1.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
@@ -2201,7 +2201,7 @@ const ServiceDetails = () => {
       duration: 50,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p62.jpg",
+      image: "/assets/category/p2.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
@@ -2237,7 +2237,7 @@ const ServiceDetails = () => {
       duration: 30,
       type: "Waxing(Only Services)",
       category: "Waxing",
-      image: "/assets/category/p63.jpg",
+      image: "/assets/category/p3.jpg",
       process: [
         "A professional beautician will arrive at your home to perform the waxing service.",
         "The customer must provide the wax, strips, and other required products for the service.",
