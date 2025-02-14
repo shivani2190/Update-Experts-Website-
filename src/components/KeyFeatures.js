@@ -1,124 +1,157 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, styled } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, styled, useTheme, useMediaQuery } from '@mui/material';
 import SecurityIcon from '@mui/icons-material/Security';
-import SpaIcon from '@mui/icons-material/Spa';
 import StarIcon from '@mui/icons-material/Star';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 
-const FeatureCard = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(4),
+const FeatureCard = styled(Card)(({ theme }) => ({
   height: '100%',
-  background: '#FFFFFF',
-  borderRadius: '25px',
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)',
-  transition: 'all 0.4s ease',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  textAlign: 'center',
-  position: 'relative',
-  overflow: 'hidden',
-  border: '1px solid rgba(0, 0, 0, 0.08)',
+  background: '#ffffff',
+  borderRadius: '20px',
+  border: '1px solid rgba(255, 77, 141, 0.1)',
+  boxShadow: 'none',
+  transition: 'all 0.3s ease-in-out',
   '&:hover': {
-    transform: 'translateY(-12px)',
-    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
+    transform: 'translateY(-10px)',
+    boxShadow: '0 20px 40px rgba(255, 77, 141, 0.1)',
     '& .icon-wrapper': {
       transform: 'scale(1.1)',
+      backgroundColor: theme.palette.primary.main,
+      '& svg': {
+        color: '#ffffff',
+      },
     },
-    '& .feature-title': {
-      color: '#000000',
-    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: '16px',
   }
 }));
 
-const IconWrapper = styled(Box)({
+const IconWrapper = styled(Box)(({ theme }) => ({
   width: '80px',
   height: '80px',
   borderRadius: '50%',
-  background: 'linear-gradient(to right, #ff6b6b, #ff8e53)',
+  backgroundColor: '#FFF5F8',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginBottom: '20px',
-  transition: 'all 0.3s ease',
+  margin: '0 auto 24px',
+  transition: 'all 0.3s ease-in-out',
   '& svg': {
     fontSize: '40px',
-    color: '#ffffff'
+    color: theme.palette.primary.main,
+    transition: 'all 0.3s ease-in-out',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '60px',
+    height: '60px',
+    marginBottom: '16px',
+    '& svg': {
+      fontSize: '30px',
+    },
   }
-});
+}));
+
+const features = [
+  {
+    id: 1,
+    title: 'Safety Assured',
+    description: 'Rigorous safety protocols and premium hygiene standards for your complete peace of mind.',
+    icon: <SecurityIcon />,
+  },
+  {
+    id: 2,
+    title: 'Expert Care',
+    description: 'Highly skilled professionals delivering personalized luxury beauty experiences.',
+    icon: <EmojiObjectsIcon />,
+  },
+  {
+    id: 3,
+    title: 'Premium Quality',
+    description: 'Top-tier products and services that exceed industry standards for exceptional results.',
+    icon: <StarIcon />,
+  },
+  {
+    id: 4,
+    title: 'Value for Money',
+    description: 'Luxurious services at competitive prices, making beauty accessible to all.',
+    icon: <LocalOfferIcon />,
+  },
+];
 
 const KeyFeatures = () => {
-  const features = [
-    {
-      icon: <SecurityIcon />,
-      title: 'Safety Assured',
-      description: 'Rigorous safety protocols and premium hygiene standards for your complete peace of mind.',
-    },
-    {
-      icon: <SpaIcon />,
-      title: 'Expert Care',
-      description: 'Highly skilled professionals delivering personalized luxury beauty experiences.',
-    },
-    {
-      icon: <StarIcon />,
-      title: 'Premium Quality',
-      description: 'Top-tier products and services that exceed industry standards for exceptional results.',
-    },
-    {
-      icon: <LocalOfferIcon />,
-      title: 'Value for Money',
-      description: 'Luxurious services at competitive prices, making beauty accessible to all.',
-    },
-  ];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box sx={{ 
-      py: 10,
-      background: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-      position: 'relative'
+      py: { xs: 4, sm: 6, md: 10 }, 
+      backgroundColor: '#ffffff' 
     }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography 
-            variant="h2" 
-            sx={{ 
+        <Box sx={{ 
+          textAlign: 'center', 
+          mb: { xs: 4, sm: 6, md: 8 } 
+        }}>
+          <Typography
+            variant={isMobile ? 'h4' : 'h2'}
+            sx={{
               fontWeight: 700,
-              color: '#000000',
-              mb: 2
+              color: '#2C3E50',
+              mb: { xs: 1, sm: 2 },
+              fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
             }}
           >
             Why Choose Us
           </Typography>
-          <Typography 
-            variant="h5" 
-            color="text.secondary" 
-            sx={{ maxWidth: '800px', mx: 'auto' }}
+          <Typography
+            variant={isMobile ? 'body1' : 'h6'}
+            sx={{
+              color: '#666666',
+              maxWidth: '800px',
+              margin: '0 auto',
+              fontWeight: 400,
+              fontSize: { xs: '0.875rem', sm: '1rem', md: '1.25rem' }
+            }}
           >
             Experience excellence in every detail of our premium beauty services
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
-          {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+          {features.map((feature) => (
+            <Grid item xs={6} sm={6} md={3} key={feature.id}>
               <FeatureCard>
-                <IconWrapper className="icon-wrapper">
-                  {feature.icon}
-                </IconWrapper>
-                <Typography 
-                  variant="h5" 
-                  className="feature-title"
-                  sx={{ 
-                    fontWeight: 600, 
-                    mb: 2,
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  {feature.title}
-                </Typography>
-                <Typography color="text.secondary">
-                  {feature.description}
-                </Typography>
+                <CardContent sx={{ 
+                  textAlign: 'center', 
+                  p: { xs: 2, sm: 3, md: 4 }
+                }}>
+                  <IconWrapper className="icon-wrapper">
+                    {feature.icon}
+                  </IconWrapper>
+                  <Typography
+                    variant={isMobile ? 'h6' : 'h5'}
+                    sx={{
+                      fontWeight: 600,
+                      mb: { xs: 1, sm: 2 },
+                      color: '#2C3E50',
+                      fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }
+                    }}
+                  >
+                    {feature.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: '#666666',
+                      lineHeight: 1.6,
+                      fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }
+                    }}
+                  >
+                    {feature.description}
+                  </Typography>
+                </CardContent>
               </FeatureCard>
             </Grid>
           ))}

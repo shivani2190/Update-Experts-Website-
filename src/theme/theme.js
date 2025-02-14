@@ -52,33 +52,25 @@ const theme = createTheme({
       fontWeight: 500,
     },
   },
-  shape: {
-    borderRadius: 8,
-  },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '25px',
+          borderRadius: '8px',
           padding: '8px 24px',
-        },
-        contained: {
-          boxShadow: 'none',
-          '&:hover': {
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-          },
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-          borderRadius: '16px',
+          borderRadius: '12px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
         },
       },
     },
   },
 });
 
+export { theme };
 export default theme;

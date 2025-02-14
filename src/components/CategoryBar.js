@@ -1,95 +1,146 @@
 import React from 'react';
-import { Box, Container, styled } from '@mui/material';
+import { Box, Typography, Grid, styled, useTheme, useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const CategoryContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: '#ffffff',
-  padding: '20px 0',
-  borderBottom: '1px solid #e0e0e0',
-  boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-}));
-
-const CategoryItem = styled(Link)(({ theme }) => ({
+const CategoryItem = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  padding: theme.spacing(1),
+  cursor: 'pointer',
   textDecoration: 'none',
-  color: '#333333',
-  padding: '12px',
-  borderRadius: '8px',
-  transition: 'all 0.3s ease',
+  color: 'inherit',
+  transition: 'transform 0.2s',
   '&:hover': {
-    color: '#000000',
     transform: 'translateY(-5px)',
-    '& img': {
-      boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
-    },
-    '& span': {
-      color: '#ff4081',
-    }
   },
+  [theme.breakpoints.up('md')]: {
+    padding: theme.spacing(2),
+  }
 }));
 
-const CategoryIcon = styled('img')({
-  width: '80px',
-  height: '80px',
-  marginBottom: '8px',
-  borderRadius: '50%',
-  objectFit: 'cover',
+const ImageContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  maxWidth: 50,
+  height: 50,
+  borderRadius: '12px',
+  overflow: 'hidden',
+  marginBottom: theme.spacing(0.5),
+  backgroundColor: '#FFF1F5',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   transition: 'all 0.3s ease',
-  boxShadow: '0 4px 8px rgba(0,0,0,0.05)',
-});
-
-const CategoryText = styled('span')({
-  fontSize: '15px',
-  fontWeight: '600',
-  textAlign: 'center',
-  transition: 'color 0.3s ease',
-  textTransform: 'uppercase',
-  letterSpacing: '0.5px',
-});
+  [theme.breakpoints.up('md')]: {
+    maxWidth: 120,
+    height: 120,
+    borderRadius: '24px',
+    marginBottom: theme.spacing(2),
+    boxShadow: '0 8px 20px rgba(255, 77, 141, 0.1)',
+    '&:hover': {
+      boxShadow: '0 12px 28px rgba(255, 77, 141, 0.2)',
+    }
+  }
+}));
 
 const categories = [
-  { name: 'Facial', icon: '/assets/category/p1.jpg', path: '/' },
-  { name: 'Manicure', icon: '/assets/category/p2.jpg', path: '/' },
-  { name: 'Pedicure', icon: '/assets/category/p3.jpg', path: '/' },
-  { name: 'Waxing', icon: '/assets/category/p4.jpg', path: '/' },
-  { name: 'Makeup', icon: '/assets/category/p5.jpg', path: '/' },
-  { name: 'Threading', icon: '/assets/category/p6.jpg', path: '/' },
-  { name: 'Hair Care', icon: '/assets/category/p7.jpg', path: '/' },
-  { name: 'Spa', icon: '/assets/category/p8.jpg', path: '/' },
-  { name: 'Massage', icon: '/assets/category/p9.jpg', path: '/' }
+  {
+    id: 1,
+    title: 'Salon At Home',
+    image: '/images/categories/salon-at-home.jpg',
+    link: '/services/salon'
+  },
+  {
+    id: 2,
+    title: 'Spa At Home',
+    image: '/images/categories/spa-at-home.jpg',
+    link: '/services/spa'
+  },
+  {
+    id: 3,
+    title: 'Mehendi At Home',
+    image: '/images/mehendi.jpg',
+    link: '/services/mehendi'
+  },
+  {
+    id: 4,
+    title: 'MakeUp At Home',
+    image: '/images/categories/makeup-at-home.jpg',
+    link: '/services/makeup'
+  }
 ];
 
 const CategoryBar = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-    <CategoryContainer>
-      <Container maxWidth="xl">
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: 'repeat(3, 1fr)', // 3 items per row on mobile
-              sm: 'repeat(5, 1fr)', // 5 items per row on tablet
-              md: 'repeat(7, 1fr)', // 7 items per row on laptop
-              lg: 'repeat(9, 1fr)', // 9 items per row on desktop
-            },
-            gap: { xs: 1, sm: 2, md: 3 },
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            overflow: 'hidden'
-          }}
-        >
-          {categories.map((category) => (
-            <CategoryItem key={category.name} to={category.path}>
-              <CategoryIcon src={category.icon} alt={category.name} />
-              <CategoryText>{category.name}</CategoryText>
+    <Box sx={{ 
+      py: { xs: 2, sm: 3, md: 6 },
+      px: { xs: 2, sm: 3, md: 8 },
+      backgroundColor: '#fff'
+    }}>
+      <Typography
+        variant={isMobile ? "subtitle1" : "h4"}
+        sx={{
+          fontWeight: { xs: 500, md: 600 },
+          mb: { xs: 2, md: 4 },
+          color: '#2C3E50',
+          fontSize: { xs: '1rem', sm: '1.5rem', md: '2.5rem' },
+          textAlign: { xs: 'left', md: 'center' },
+          position: 'relative',
+          display: { xs: 'block', md: 'inline-block' },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            width: { md: '60px' },
+            height: '3px',
+            background: 'linear-gradient(to right, #FF4D8D, #FF8DAF)',
+            bottom: '-10px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            borderRadius: '2px',
+            display: { xs: 'none', md: 'block' }
+          }
+        }}
+      >
+        What are you looking for?
+      </Typography>
+
+      <Grid container spacing={{ xs: 2, md: 4 }} sx={{ mt: { md: 4 } }}>
+        {categories.map((category) => (
+          <Grid item xs={3} key={category.id}>
+            <CategoryItem component={Link} to={category.link}>
+              <ImageContainer>
+                <Box
+                  component="img"
+                  src={category.image}
+                  alt={category.title}
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+              </ImageContainer>
+              <Typography
+                variant={isMobile ? "caption" : "h6"}
+                align="center"
+                sx={{
+                  fontWeight: { xs: 400, md: 500 },
+                  color: '#2C3E50',
+                  fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.1rem' },
+                  lineHeight: { xs: 1.2, md: 1.4 },
+                  mt: { xs: 0.5, md: 1 }
+                }}
+              >
+                {category.title}
+              </Typography>
             </CategoryItem>
-          ))}
-        </Box>
-      </Container>
-    </CategoryContainer>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

@@ -1,34 +1,34 @@
 import React from 'react';
 import { Box, Typography, Grid, Card, CardContent, useTheme, useMediaQuery } from '@mui/material';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import PersonIcon from '@mui/icons-material/Person';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PaymentsIcon from '@mui/icons-material/Payments';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 
-const steps = [
+const features = [
   {
-    icon: <CalendarMonthIcon />,
-    title: 'Book Service',
-    description: 'Choose your service and select your preferred time slot'
+    icon: <VerifiedUserIcon />,
+    title: 'Verified Experts',
+    description: 'All our experts are verified and highly skilled professionals'
   },
   {
-    icon: <PersonIcon />,
-    title: 'Expert Assignment',
-    description: 'We will assign the best expert for your service'
+    icon: <AccessTimeIcon />,
+    title: 'On-Time Service',
+    description: 'Punctual service delivery at your preferred time'
   },
   {
-    icon: <CheckCircleIcon />,
-    title: 'Service Delivered',
-    description: 'Get your service delivered at your doorstep'
+    icon: <ThumbUpIcon />,
+    title: 'Quality Assured',
+    description: 'Premium products and hygienic service guaranteed'
   },
   {
-    icon: <PaymentsIcon />,
-    title: 'Easy Payment',
-    description: 'Pay after the service with multiple payment options'
+    icon: <LocalOfferIcon />,
+    title: 'Best Prices',
+    description: 'Competitive prices with regular offers and discounts'
   }
 ];
 
-const HowItWorks = () => {
+const WhyChooseUs = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -47,11 +47,11 @@ const HowItWorks = () => {
           fontSize: '1rem'
         }}
       >
-        How It Works
+        Why Choose Us
       </Typography>
 
       <Grid container spacing={1.5}>
-        {steps.map((step, index) => (
+        {features.map((feature, index) => (
           <Grid item xs={6} sm={6} md={3} key={index}>
             <Card 
               sx={{ 
@@ -83,7 +83,7 @@ const HowItWorks = () => {
                       }
                     }}
                   >
-                    {step.icon}
+                    {feature.icon}
                   </Box>
                   <Typography 
                     variant="subtitle2"
@@ -93,7 +93,7 @@ const HowItWorks = () => {
                       fontSize: { xs: '0.875rem', md: '1rem' }
                     }}
                   >
-                    {step.title}
+                    {feature.title}
                   </Typography>
                   <Typography 
                     variant="body2"
@@ -103,7 +103,7 @@ const HowItWorks = () => {
                       lineHeight: 1.3
                     }}
                   >
-                    {step.description}
+                    {feature.description}
                   </Typography>
                 </Box>
               </CardContent>
@@ -115,4 +115,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default WhyChooseUs;

@@ -1,143 +1,173 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, styled } from '@mui/material';
-import { useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const BrandsSection = styled(Box)(({ theme }) => ({
-  padding: '60px 0',
-  background: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
-  position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    opacity: 0.1,
-    zIndex: 1,
-    pointerEvents: 'none'
+const brands = [
+  {
+    id: 1,
+    name: 'O3+',
+    image: '/assets/brands/oxy.jpeg',
+    description: 'Professional Skin Care'
   },
-  '& > *': {
-    position: 'relative',
-    zIndex: 2
+  {
+    id: 2,
+    name: 'L\'Oreal',
+    image: '/assets/brands/loreal.png',
+    description: 'Hair & Skin Care'
   },
-  [theme.breakpoints.down('sm')]: {
-    padding: '40px 0',
+  {
+    id: 3,
+    name: 'Casmara',
+    image: '/assets/brands/casmara.png',
+    description: 'Beauty & Wellness'
+  },
+  {
+    id: 4,
+    name: 'Professional',
+    image: '/assets/brands/professional.jpg',
+    description: 'Professional Hair Care'
+  },
+  {
+    id: 5,
+    name: 'Rica',
+    image: '/assets/brands/rica.webp',
+    description: 'Natural Beauty Care'
+  },
+  {
+    id: 6,
+    name: 'Raga',
+    image: '/assets/brands/raga.png',
+    description: 'Premium Waxing'
   }
-}));
-
-const BrandCard = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(3),
-  background: '#ffffff',
-  borderRadius: '16px',
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-  border: '1px solid rgba(0, 0, 0, 0.1)',
-  transition: 'all 0.3s ease',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '120px',
-  '&:hover': {
-    transform: 'translateY(-5px)',
-    boxShadow: '0 12px 48px rgba(0, 0, 0, 0.15)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    height: '100px',
-    padding: theme.spacing(2),
-  }
-}));
-
-const BrandImage = styled('img')(({ theme }) => ({
-  maxWidth: '80%',
-  maxHeight: '80%',
-  objectFit: 'contain',
-  opacity: 0.9,
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    opacity: 1,
-  },
-  [theme.breakpoints.down('sm')]: {
-    maxWidth: '90%',
-    maxHeight: '90%',
-  }
-}));
-
-const SectionTitle = styled(Typography)(({ theme }) => ({
-  fontSize: '2.5rem',
-  fontWeight: 700,
-  marginBottom: theme.spacing(6),
-  textAlign: 'center',
-  color: '#000000',
-  position: 'relative',
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    bottom: '-15px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '60px',
-    height: '3px',
-    backgroundColor: '#000000',
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '2rem',
-    marginBottom: theme.spacing(4),
-  }
-}));
+];
 
 const Brands = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const brands = [
-    { name: 'L\'Oreal', image: '/assets/brands/loreal.png' },
-    { name: 'Casmara', image: '/assets/brands/casmara.png' },
-    { name: 'Oxy', image: '/assets/brands/oxy.jpeg' },
-    { name: 'Professional', image: '/assets/brands/professional.jpg' },
-    { name: 'Raga', image: '/assets/brands/raga.png' },
-    { name: 'Rics', image: '/assets/brands/rica.webp' },
-  ];
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isMobile ? 3 : 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
   return (
-    
-      // <BrandsSection>
-      <Box sx={{ 
-      py: 8,
-      background: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-    }}>
-        <Container maxWidth="lg">
-          <SectionTitle>
-            Brands We Trust
-          </SectionTitle>
-          
-          <Typography
-            variant="h6"
-            align="center"
-            sx={{
-              mb: isMobile ? 4 : 6,
-              color: '#000000',
-              fontSize: isMobile ? '1rem' : undefined,
-            }}
-          >
-            We use only premium quality products from trusted brands
-          </Typography>
+    <Box 
+      sx={{ 
+        py: { xs: 2, md: 4 },
+        px: { xs: 2, md: 4 },
+        backgroundColor: '#fff'
+      }}
+    >
+      <Typography
+        variant="subtitle1"
+        sx={{
+          fontWeight: 600,
+          mb: 2,
+          color: '#333',
+          fontSize: '1rem'
+        }}
+      >
+        Our Partner Brands
+      </Typography>
 
-          <Grid container spacing={isMobile ? 2 : 4}>
-            {brands.map((brand, index) => (
-              <Grid item xs={6} sm={4} md={2} key={index}>
-                <BrandCard>
-                  <BrandImage
-                    src={brand.image}
-                    alt={brand.name}
-                  />
-                </BrandCard>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-        </Box>
-      // </BrandsSection>
-      
+      <Box 
+        sx={{ 
+          mx: -1,
+          '.slick-track': {
+            display: 'flex',
+            alignItems: 'center'
+          }
+        }}
+      >
+        <Slider {...settings}>
+          {brands.map((brand) => (
+            <Box 
+              key={brand.id} 
+              sx={{ 
+                px: 1,
+                display: 'flex !important',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              <Box
+                sx={{
+                  p: 1.5,
+                  borderRadius: '12px',
+                  border: '1px solid #eee',
+                  width: '100%',
+                  height: { xs: 80, md: 100 },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                    border: '1px solid #FFE4ED'
+                  }
+                }}
+              >
+                <Box
+                  component="img"
+                  src={brand.image}
+                  alt={brand.name}
+                  sx={{
+                    height: { xs: 40, md: 50 },
+                    width: 'auto',
+                    objectFit: 'contain',
+                    filter: 'grayscale(100%)',
+                    opacity: 0.7,
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      filter: 'grayscale(0%)',
+                      opacity: 1
+                    }
+                  }}
+                />
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: '#666',
+                    fontSize: '0.75rem',
+                    mt: 1,
+                    textAlign: 'center'
+                  }}
+                >
+                  {brand.description}
+                </Typography>
+              </Box>
+            </Box>
+          ))}
+        </Slider>
+      </Box>
+    </Box>
   );
 };
 
