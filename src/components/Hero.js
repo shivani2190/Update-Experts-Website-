@@ -174,7 +174,7 @@ function Hero() {
     <Box sx={{ position: 'relative', width: '100%' }}>
       <SearchContainer>
         <SearchField
-          placeholder="Search for Services"
+          placeholder="Search for Service"
           variant="outlined"
           InputProps={{
             endAdornment: (
