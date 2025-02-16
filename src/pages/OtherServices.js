@@ -42,25 +42,25 @@ const services = [
   {
     title: 'Pest Control',
     description: 'Professional pest control services to keep your home pest-free',
-    image: '/images/services/pest-control.jpg',
+    image: '/assets/services/pest-control.jpg',
     price: '₹499'
   },
   {
     title: 'Home Cleaning',
     description: 'Thorough home cleaning services for a spotless living space',
-    image: '/images/services/home-cleaning.jpg',
+    image: '/assets/services/home-cleaning.jpg',
     price: '₹399'
   },
   {
     title: 'Drivers',
     description: 'Professional drivers for your daily commute or special occasions',
-    image: '/images/services/drivers.jpg',
+    image: '/assets/services/drivers.jpg',
     price: '₹599/day'
   },
   {
     title: 'AC Repairs',
     description: 'Expert AC repair and maintenance services',
-    image: '/images/services/ac-repair.jpg',
+    image: '/assets/services/ac-repair.jpg',
     price: '₹299'
   },
 ];

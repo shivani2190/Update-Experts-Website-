@@ -2303,7 +2303,7 @@ const ServiceDetails = () => {
             src={serviceData.image} 
             alt={serviceData.name}
             onError={(e) => {
-              e.target.src = '/images/services/default-service.jpg'; // Fallback image
+              e.target.src = '/assets/services/default-service.jpg'; // Fallback image
             }}
           />
         </ImageContainer>
