@@ -1,31 +1,99 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, useTheme, useMediaQuery } from '@mui/material';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { Box, Container, Typography, Grid, Card, CardContent, styled, useTheme, useMediaQuery } from '@mui/material';
+import SecurityIcon from '@mui/icons-material/Security';
+import StarIcon from '@mui/icons-material/Star';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+
+const FeatureCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  maxWidth: '280px',
+  margin: '0 auto',
+  background: '#ffffff',
+  borderRadius: '16px',
+  border: '1px solid #e0e0e0',
+  boxShadow: 'none',
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'translateY(-10px)',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+    '& .icon-wrapper': {
+      transform: 'scale(1.1)',
+      backgroundColor: '#000000',
+      '& svg': {
+        color: '#ffffff',
+      },
+    },
+  },
+}));
+
+const IconWrapper = styled(Box)(({ theme }) => ({
+  width: '60px',
+  height: '60px',
+  borderRadius: '50%',
+  backgroundColor: '#f5f5f5',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '0 auto 16px',
+  transition: 'all 0.3s ease-in-out',
+  '& svg': {
+    fontSize: '28px',
+    color: '#000000',
+    transition: 'all 0.3s ease-in-out',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '50px',
+    height: '50px',
+    '& svg': {
+      fontSize: '24px',
+    },
+  }
+}));
+
+const ScrollContainer = styled(Box)(({ theme }) => ({
+  overflowX: 'auto',
+  '&::-webkit-scrollbar': {
+    height: '6px',
+  },
+  '&::-webkit-scrollbar-track': {
+    background: '#f5f5f5',
+    borderRadius: '10px',
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: '#000000',
+    borderRadius: '10px',
+    '&:hover': {
+      background: '#333333',
+    },
+  },
+}));
 
 const features = [
   {
-    icon: <VerifiedUserIcon />,
-    title: 'Verified Experts',
-    description: 'All our experts are verified and highly skilled professionals'
+    id: 1,
+    title: 'Safety Assured',
+    description: 'Rigorous safety protocols and premium hygiene standards for your complete peace of mind.',
+    icon: <SecurityIcon />,
   },
   {
-    icon: <AccessTimeIcon />,
-    title: 'On-Time Service',
-    description: 'Punctual service delivery at your preferred time'
+    id: 2,
+    title: 'Expert Care',
+    description: 'Highly skilled professionals delivering personalized luxury beauty experiences.',
+    icon: <EmojiObjectsIcon />,
   },
   {
-    icon: <ThumbUpIcon />,
-    title: 'Quality Assured',
-    description: 'Premium products and hygienic service guaranteed'
+    id: 3,
+    title: 'Premium Quality',
+    description: 'Top-tier products and services that exceed industry standards for exceptional results.',
+    icon: <StarIcon />,
   },
   {
+    id: 4,
+    title: 'Value for Money',
+    description: 'Luxurious services at competitive prices, making beauty accessible to all.',
     icon: <LocalOfferIcon />,
-    title: 'Best Prices',
-    description: 'Competitive prices with regular offers and discounts'
-  }
+  },
 ];
 
 const WhyChooseUs = () => {
@@ -34,83 +102,86 @@ const WhyChooseUs = () => {
 
   return (
     <Box sx={{ 
-      py: { xs: 2, md: 4 },
-      px: { xs: 2, md: 4 },
-      backgroundColor: '#fff'
+      py: { xs: 4, sm: 6, md: 10 }, 
+      backgroundColor: '#ffffff' 
     }}>
-      <Typography
-        variant="subtitle1"
-        sx={{
-          fontWeight: 600,
-          mb: 2,
-          color: '#333',
-          fontSize: '1rem'
-        }}
-      >
-        Why Choose Us
-      </Typography>
-
-      <Grid container spacing={1.5}>
-        {features.map((feature, index) => (
-          <Grid item xs={6} sm={6} md={3} key={index}>
-            <Card 
-              sx={{ 
-                height: '100%',
-                borderRadius: '12px',
-                boxShadow: 'none',
-                border: '1px solid #eee',
-                transition: 'transform 0.2s',
-                '&:hover': {
-                  transform: 'translateY(-4px)'
-                }
-              }}
-            >
-              <CardContent sx={{ p: { xs: 1.5, md: 2 } }}>
-                <Box 
-                  sx={{ 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    gap: 1
-                  }}
-                >
-                  <Box 
-                    sx={{ 
-                      color: '#FF4D8D',
-                      '& svg': {
-                        fontSize: { xs: '2rem', md: '2.5rem' }
-                      }
-                    }}
-                  >
-                    {feature.icon}
-                  </Box>
-                  <Typography 
-                    variant="subtitle2"
-                    sx={{ 
-                      fontWeight: 600,
-                      color: '#333',
-                      fontSize: { xs: '0.875rem', md: '1rem' }
-                    }}
-                  >
-                    {feature.title}
-                  </Typography>
-                  <Typography 
-                    variant="body2"
-                    sx={{ 
-                      color: '#666',
-                      fontSize: { xs: '0.75rem', md: '0.875rem' },
-                      lineHeight: 1.3
-                    }}
-                  >
-                    {feature.description}
-                  </Typography>
-                </Box>
-              </CardContent>
-            </Card>
+      <Container maxWidth="lg">
+        <Box sx={{ 
+          textAlign: 'center', 
+          mb: { xs: 4, sm: 6, md: 8 } 
+        }}>
+          <Typography
+            variant={isMobile ? 'h4' : 'h2'}
+            sx={{
+              fontWeight: 700,
+              color: '#000000',
+              mb: { xs: 1, sm: 2 },
+              fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
+            }}
+          >
+            Why Choose Us
+          </Typography>
+          <Typography
+            variant={isMobile ? 'body1' : 'h6'}
+            sx={{
+              color: '#666666',
+              maxWidth: '800px',
+              margin: '0 auto',
+              fontWeight: 400,
+              fontSize: { xs: '0.875rem', sm: '1rem', md: '1.25rem' }
+            }}
+          >
+            Experience excellence in every detail of our premium beauty services
+          </Typography>
+        </Box>
+        <ScrollContainer>
+          <Grid 
+            container 
+            sx={{ 
+              flexWrap: 'nowrap',
+              minWidth: { xs: 'max-content', md: '100%' },
+              pb: 1
+            }}  
+            spacing={{ xs: 2, sm: 2, md: 3 }}
+          >
+            {features.map((feature) => (
+              <Grid item xs={8} sm={6} md={3} key={feature.id}>
+                <FeatureCard>
+                  <CardContent sx={{ 
+                    textAlign: 'center', 
+                    p: { xs: 2, sm: 2.5 }
+                  }}>
+                    <IconWrapper className="icon-wrapper">
+                      {feature.icon}
+                    </IconWrapper>
+                    <Typography
+                      variant={isMobile ? 'h6' : 'h5'}
+                      sx={{
+                        fontWeight: 600,
+                        mb: 1,
+                        color: '#000000',
+                        fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }
+                      }}
+                    >
+                      {feature.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#666666',
+                        lineHeight: 1.5,
+                        fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.875rem' }
+                      }}
+                    >
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </FeatureCard>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </ScrollContainer>
+      </Container>
     </Box>
   );
 };
