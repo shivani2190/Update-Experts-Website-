@@ -1,9 +1,73 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, useTheme, useMediaQuery, Container, styled } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonIcon from '@mui/icons-material/Person';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PaymentsIcon from '@mui/icons-material/Payments';
+
+const StepCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  maxWidth: '280px',
+  margin: '0 auto',
+  background: '#ffffff',
+  borderRadius: '16px',
+  border: '1px solid #e0e0e0',
+  boxShadow: 'none',
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'translateY(-10px)',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+    '& .icon-wrapper': {
+      transform: 'scale(1.1)',
+      backgroundColor: '#000000',
+      '& svg': {
+        color: '#ffffff',
+      },
+    },
+  },
+}));
+
+const IconWrapper = styled(Box)(({ theme }) => ({
+  width: '60px',
+  height: '60px',
+  borderRadius: '50%',
+  backgroundColor: '#f5f5f5',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '0 auto 16px',
+  transition: 'all 0.3s ease-in-out',
+  '& svg': {
+    fontSize: '28px',
+    color: '#000000',
+    transition: 'all 0.3s ease-in-out',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '50px',
+    height: '50px',
+    '& svg': {
+      fontSize: '24px',
+    },
+  }
+}));
+
+const ScrollContainer = styled(Box)(({ theme }) => ({
+  overflowX: 'auto',
+  '&::-webkit-scrollbar': {
+    height: '6px',
+  },
+  '&::-webkit-scrollbar-track': {
+    background: '#f5f5f5',
+    borderRadius: '10px',
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: '#000000',
+    borderRadius: '10px',
+    '&:hover': {
+      background: '#333333',
+    },
+  },
+}));
 
 const steps = [
   {
@@ -34,83 +98,82 @@ const HowItWorks = () => {
 
   return (
     <Box sx={{ 
-      py: { xs: 2, md: 4 },
-      px: { xs: 2, md: 4 },
+      py: { xs: 4, sm: 6, md: 8 },
       backgroundColor: '#fff'
     }}>
-      <Typography
-        variant="subtitle1"
-        sx={{
-          fontWeight: 600,
-          mb: 2,
-          color: '#333',
-          fontSize: '1rem'
-        }}
-      >
-        How It Works
-      </Typography>
+      <Container maxWidth="lg">
+        <Box sx={{ mb: { xs: 3, sm: 4 } }}>
+          <Typography
+            variant={isMobile ? 'h5' : 'h4'}
+            sx={{
+              fontWeight: 700,
+              color: '#000000',
+              mb: 1,
+              textAlign: 'center'
+            }}
+          >
+            How It Works
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#666666',
+              textAlign: 'center',
+              maxWidth: '600px',
+              mx: 'auto'
+            }}
+          >
+            Get started with our services in just a few simple steps
+          </Typography>
+        </Box>
 
-      <Grid container spacing={1.5}>
-        {steps.map((step, index) => (
-          <Grid item xs={6} sm={6} md={3} key={index}>
-            <Card 
-              sx={{ 
-                height: '100%',
-                borderRadius: '12px',
-                boxShadow: 'none',
-                border: '1px solid #eee',
-                transition: 'transform 0.2s',
-                '&:hover': {
-                  transform: 'translateY(-4px)'
-                }
-              }}
-            >
-              <CardContent sx={{ p: { xs: 1.5, md: 2 } }}>
-                <Box 
-                  sx={{ 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    gap: 1
-                  }}
-                >
-                  <Box 
-                    sx={{ 
-                      color: '#FF4D8D',
-                      '& svg': {
-                        fontSize: { xs: '2rem', md: '2.5rem' }
-                      }
-                    }}
-                  >
-                    {step.icon}
-                  </Box>
-                  <Typography 
-                    variant="subtitle2"
-                    sx={{ 
-                      fontWeight: 600,
-                      color: '#333',
-                      fontSize: { xs: '0.875rem', md: '1rem' }
-                    }}
-                  >
-                    {step.title}
-                  </Typography>
-                  <Typography 
-                    variant="body2"
-                    sx={{ 
-                      color: '#666',
-                      fontSize: { xs: '0.75rem', md: '0.875rem' },
-                      lineHeight: 1.3
-                    }}
-                  >
-                    {step.description}
-                  </Typography>
-                </Box>
-              </CardContent>
-            </Card>
+        <ScrollContainer>
+          <Grid 
+            container 
+            sx={{ 
+              flexWrap: 'nowrap',
+              minWidth: { xs: 'max-content', md: '100%' },
+              pb: 1
+            }} 
+            spacing={2}
+          >
+            {steps.map((step, index) => (
+              <Grid item xs={8} sm={6} md={3} key={index}>
+                <StepCard>
+                  <CardContent sx={{ p: { xs: 2, sm: 2.5 } }}>
+                    <Box sx={{ textAlign: 'center' }}>
+                      <IconWrapper className="icon-wrapper">
+                        {step.icon}
+                      </IconWrapper>
+                      <Typography 
+                        variant="h6"
+                        sx={{ 
+                          fontWeight: 600,
+                          color: '#000000',
+                          mb: 1,
+                          fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }
+                        }}
+                      >
+                        {step.title}
+                      </Typography>
+                      <Typography 
+                        variant="body2"
+                        sx={{ 
+                          color: '#666666',
+                          fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.875rem' },
+                          lineHeight: 1.5
+                        }}
+                      >
+                        {step.description}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </StepCard>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </ScrollContainer>
+      </Container>
     </Box>
   );
 };

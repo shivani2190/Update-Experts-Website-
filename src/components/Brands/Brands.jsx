@@ -1,8 +1,48 @@
 import React from 'react';
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery, Container, styled } from '@mui/material';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+const BrandCard = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderRadius: '16px',
+  border: '1px solid #e0e0e0',
+  width: '100%',
+  height: '140px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: '#ffffff',
+  transition: 'all 0.3s ease',
+  cursor: 'pointer',
+  '&:hover': {
+    transform: 'translateY(-8px)',
+    boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+    border: '1px solid #000000',
+    '& img': {
+      transform: 'scale(1.1)',
+      filter: 'grayscale(0%)',
+      opacity: 1
+    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '120px',
+    padding: theme.spacing(1.5),
+  }
+}));
+
+const BrandImage = styled('img')({
+  height: '60px',
+  width: 'auto',
+  maxWidth: '100%',
+  objectFit: 'contain',
+  marginBottom: '12px',
+  filter: 'grayscale(100%)',
+  opacity: 0.8,
+  transition: 'all 0.3s ease',
+});
 
 const brands = [
   {
@@ -48,10 +88,10 @@ const Brands = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: isMobile ? 3 : 6,
+    speed: 800,
+    slidesToShow: isMobile ? 2 : 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -61,15 +101,25 @@ const Brands = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true
         }
       },
       {
         breakpoint: 960,
         settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1280,
+        settings: {
           slidesToShow: 4,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true
         }
       }
     ]
@@ -78,95 +128,99 @@ const Brands = () => {
   return (
     <Box 
       sx={{ 
-        py: { xs: 2, md: 4 },
-        px: { xs: 2, md: 4 },
+        py: { xs: 4, sm: 6, md: 8 },
         backgroundColor: '#fff'
       }}
     >
-      <Typography
-        variant="subtitle1"
-        sx={{
-          fontWeight: 600,
-          mb: 2,
-          color: '#333',
-          fontSize: '1rem'
-        }}
-      >
-        Our Partner Brands
-      </Typography>
+      <Container maxWidth="lg">
+        <Box sx={{ mb: { xs: 3, sm: 4 } }}>
+          <Typography
+            variant={isMobile ? 'h5' : 'h4'}
+            sx={{
+              fontWeight: 700,
+              color: '#000000',
+              mb: 1,
+              textAlign: 'center'
+            }}
+          >
+            Our Partner Brands
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#666666',
+              textAlign: 'center',
+              maxWidth: '600px',
+              mx: 'auto',
+              mb: 4
+            }}
+          >
+            We collaborate with premium beauty brands to deliver excellence
+          </Typography>
+        </Box>
 
-      <Box 
-        sx={{ 
-          mx: -1,
-          '.slick-track': {
-            display: 'flex',
-            alignItems: 'center'
-          }
-        }}
-      >
-        <Slider {...settings}>
-          {brands.map((brand) => (
-            <Box 
-              key={brand.id} 
-              sx={{ 
-                px: 1,
-                display: 'flex !important',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-            >
-              <Box
-                sx={{
-                  p: 1.5,
-                  borderRadius: '12px',
-                  border: '1px solid #eee',
-                  width: '100%',
-                  height: { xs: 80, md: 100 },
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'transform 0.2s',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                    border: '1px solid #FFE4ED'
-                  }
+        <Box 
+          sx={{ 
+            mx: { xs: -1, md: -2 },
+            '.slick-track': {
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2
+            },
+            '.slick-dots': {
+              bottom: '-40px',
+              '& li button:before': {
+                fontSize: '8px',
+                color: '#000000'
+              },
+              '& li.slick-active button:before': {
+                color: '#000000'
+              }
+            }
+          }}
+        >
+          <Slider {...settings}>
+            {brands.map((brand) => (
+              <Box 
+                key={brand.id} 
+                sx={{ 
+                  px: { xs: 1, md: 2 }
                 }}
               >
-                <Box
-                  component="img"
-                  src={brand.image}
-                  alt={brand.name}
-                  sx={{
-                    height: { xs: 40, md: 50 },
-                    width: 'auto',
-                    objectFit: 'contain',
-                    filter: 'grayscale(100%)',
-                    opacity: 0.7,
-                    transition: 'all 0.3s',
-                    '&:hover': {
-                      filter: 'grayscale(0%)',
-                      opacity: 1
-                    }
-                  }}
-                />
-                <Typography
-                  variant="caption"
-                  sx={{
-                    color: '#666',
-                    fontSize: '0.75rem',
-                    mt: 1,
-                    textAlign: 'center'
-                  }}
-                >
-                  {brand.description}
-                </Typography>
+                <BrandCard>
+                  <BrandImage
+                    src={brand.image}
+                    alt={brand.name}
+                  />
+                  <Typography
+                    variant="subtitle2"
+                    sx={{
+                      color: '#000000',
+                      fontSize: { xs: '0.75rem', md: '0.875rem' },
+                      fontWeight: 600,
+                      textAlign: 'center',
+                      lineHeight: 1.2
+                    }}
+                  >
+                    {brand.name}
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: '#666666',
+                      fontSize: { xs: '0.7rem', md: '0.75rem' },
+                      mt: 0.5,
+                      textAlign: 'center'
+                    }}
+                  >
+                    {brand.description}
+                  </Typography>
+                </BrandCard>
               </Box>
-            </Box>
-          ))}
-        </Slider>
-      </Box>
+            ))}
+          </Slider>
+        </Box>
+      </Container>
     </Box>
   );
 };

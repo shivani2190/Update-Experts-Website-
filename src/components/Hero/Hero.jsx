@@ -36,7 +36,7 @@ const HeroSection = styled(Box)(({ theme }) => ({
     zIndex: 1
   },
   [theme.breakpoints.down('md')]: {
-    height: '80vh',
+    height: '60vh',
   },
 }));
 
@@ -119,14 +119,16 @@ const SecondaryButton = styled(Button)(({ theme }) => ({
 }));
 
 const SearchContainer = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  top: '20px',
+  position: 'fixed',
+  top: '65px',
   left: 0,
   right: 0,
-  padding: '0 16px',
+  padding: '16px',
   backgroundColor: 'transparent',
-  zIndex: 2,
+  zIndex: 1000,
   [theme.breakpoints.up('md')]: {
+    position: 'relative',
+    backgroundColor: 'transparent',
     display: 'none'
   }
 }));

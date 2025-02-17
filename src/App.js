@@ -8,8 +8,7 @@ import CategoryBar from './components/CategoryBar/CategoryBar';
 import Hero from './components/Hero/Hero';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
-import BeautyFeatures from './components/BeautyFeatures/BeautyFeatures';
-import KeyFeatures from './components/KeyFeatures/KeyFeatures';
+import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import SalonServices from './components/SalonServices/SalonServices';
 import HowItWorks from './components/HowItWorks/HowItWorks';
 import Brands from './components/Brands/Brands';
@@ -43,9 +42,8 @@ function App() {
               <TrendingNearYou />
               <WhatsNew />
               <HomeSalonServices />
-              <KeyFeatures />
+              <WhyChooseUs />
               <SalonServices />
-              <BeautyFeatures />
               <HowItWorks />
               <Brands />
               <Testimonials />
