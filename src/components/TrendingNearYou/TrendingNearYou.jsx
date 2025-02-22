@@ -201,7 +201,18 @@ const TrendingNearYou = () => {
           Trending Near You
         </Typography>
 
-        <Box sx={{ display: 'flex', gap: 1, mb: 3, overflowX: 'auto', pb: 1 }}>
+        <Box sx={{ 
+          display: 'flex', 
+          gap: 1, 
+          mb: 3, 
+          overflowX: 'auto', 
+          pb: 1,
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        }}>
           {categories.map((category) => (
             <Chip
               key={category.id}
@@ -226,11 +237,11 @@ const TrendingNearYou = () => {
             overflowX: 'auto',
             gap: 2,
             pb: 1,
-            '::-webkit-scrollbar': {
+            '&::-webkit-scrollbar': {
               display: 'none'
             },
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
+            '-ms-overflow-style': 'none',
+            'scrollbar-width': 'none',
           }}
         >
           {services.map((service) => (

@@ -54,19 +54,10 @@ const IconWrapper = styled(Box)(({ theme }) => ({
 const ScrollContainer = styled(Box)(({ theme }) => ({
   overflowX: 'auto',
   '&::-webkit-scrollbar': {
-    height: '6px',
+    display: 'none'  // Hide scrollbar for Chrome, Safari, and newer Edge
   },
-  '&::-webkit-scrollbar-track': {
-    background: '#f5f5f5',
-    borderRadius: '10px',
-  },
-  '&::-webkit-scrollbar-thumb': {
-    background: '#000000',
-    borderRadius: '10px',
-    '&:hover': {
-      background: '#333333',
-    },
-  },
+  '-ms-overflow-style': 'none',  // Hide scrollbar for IE and Edge
+  'scrollbar-width': 'none',  // Hide scrollbar for Firefox
 }));
 
 const steps = [

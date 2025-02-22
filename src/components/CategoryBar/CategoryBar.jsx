@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Typography, IconButton, styled, useTheme, useMediaQuery, Container } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Typography, IconButton, styled, useTheme, useMediaQuery, Container, Link } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
@@ -28,8 +27,9 @@ const CategoryItem = styled(Box)(({ theme }) => ({
     }
   },
   [theme.breakpoints.down('sm')]: {
-    minWidth: '100px',
+    minWidth: '85px',
     padding: theme.spacing(1),
+    margin: '0 4px',
   }
 }));
 
@@ -60,14 +60,34 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
+const CategoryTitle = styled(Typography)(({ theme }) => ({
+  fontSize: '0.9rem',
+  fontWeight: 500,
+  color: '#666666',
+  textAlign: 'center',
+  marginTop: theme.spacing(1),
+  transition: 'color 0.3s ease',
+  width: '100%',
+  whiteSpace: 'normal',
+  minHeight: '40px',
+  display: '-webkit-box',
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: 'vertical',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.75rem',
+    marginTop: theme.spacing(0.5),
+    minHeight: '32px'
+  }
+}));
+
 const ScrollButton = styled(IconButton)(({ theme }) => ({
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',
   backgroundColor: '#ffffff',
-  width: '40px',
-  height: '40px',
-  minWidth: '40px',
+  width: '32px',
+  height: '32px',
+  minWidth: '32px',
   borderRadius: '50%',
   color: '#000000',
   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -78,9 +98,27 @@ const ScrollButton = styled(IconButton)(({ theme }) => ({
   },
   zIndex: 2,
   [theme.breakpoints.down('sm')]: {
-    width: '32px',
-    height: '32px',
-    minWidth: '32px',
+    width: '24px',
+    height: '24px',
+    minWidth: '24px',
+  }
+}));
+
+const ScrollContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  overflowX: 'auto',
+  scrollBehavior: 'smooth',
+  '&::-webkit-scrollbar': {
+    display: 'none'
+  },
+  scrollbarWidth: 'none',
+  msOverflowStyle: 'none',
+  gap: theme.spacing(2),
+  padding: theme.spacing(2, 1),
+  position: 'relative',
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1),
+    padding: theme.spacing(1.5, 0.5),
   }
 }));
 
@@ -99,9 +137,9 @@ const categories = [
   },
   {
     id: 3,
-    title: 'Advance Facial',
+    title: 'Advance Facials',
     image: '/assets/categories/salon-at-home.jpg',
-    link: '/services/mehendi'
+    link: '/services/facials'
   },
   {
     id: 4,
@@ -129,113 +167,74 @@ const categories = [
   }
 ];
 
-const CategoryBar = () => {
+function CategoryBar() {
+  const scrollContainerRef = useRef(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const scrollContainerRef = useRef(null);
 
-  const handleScroll = (direction) => {
+  const scroll = (direction) => {
     const container = scrollContainerRef.current;
-    const scrollAmount = direction === 'left' ? -300 : 300;
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    const scrollAmount = isMobile ? 200 : 300;
+    if (container) {
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
     <Box sx={{ 
-      py: { xs: 4, sm: 6, md: 8 },
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      py: { xs: 1, md: 2 },
+      position: 'relative'
     }}>
       <Container maxWidth="lg">
-        <Box sx={{ mb: { xs: 3, sm: 4 } }}>
-          <Typography
-            variant={isMobile ? 'h5' : 'h4'}
-            sx={{
-              fontWeight: 700,
-              color: '#000000',
-              mb: 1,
-              textAlign: 'center'
-            }}
-          >
-            What are you looking for?
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: '#666666',
-              textAlign: 'center',
-              maxWidth: '600px',
-              mx: 'auto',
-              mb: 4
-            }}
-          >
-            Choose from our wide range of professional beauty services
-          </Typography>
-        </Box>
-
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 600,
+            mb: 3,
+            textAlign: 'center'
+          }}
+        >
+          What are you looking for?
+        </Typography>
         <Box sx={{ position: 'relative' }}>
           <ScrollButton
-            onClick={() => handleScroll('left')}
-            sx={{ left: { xs: -16, sm: -20 } }}
+            onClick={() => scroll('left')}
+            sx={{ left: { xs: -8, md: -16 } }}
           >
-            <ArrowBackIosIcon sx={{ fontSize: { xs: '1rem', sm: '1.25rem' }, ml: 1 }} />
+            <ArrowBackIosIcon sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }} />
           </ScrollButton>
 
-          <Box
-            ref={scrollContainerRef}
-            sx={{
-              display: 'flex',
-              overflowX: 'auto',
-              scrollbarWidth: 'none',
-              '&::-webkit-scrollbar': {
-                display: 'none'
-              },
-              gap: { xs: 1, sm: 2, md: 3 },
-              px: { xs: 1, sm: 2 },
-              py: 2,
-              '-webkit-overflow-scrolling': 'touch'
-            }}
-          >
+          <ScrollContainer ref={scrollContainerRef}>
             {categories.map((category) => (
-              <CategoryItem 
-                component={Link} 
-                to={category.link} 
+              <CategoryItem
                 key={category.id}
+                component={Link}
+                to={category.link}
               >
                 <ImageContainer className="category-image">
-                  <Box
-                    component="img"
-                    src={category.image}
-                    alt={category.title}
-                  />
+                  <img src={category.image} alt={category.title} />
                 </ImageContainer>
-                <Typography
-                  className="category-title"
-                  variant="subtitle2"
-                  sx={{
-                    fontWeight: 600,
-                    color: '#666666',
-                    fontSize: { xs: '0.875rem', sm: '1rem' },
-                    textAlign: 'center',
-                    transition: 'color 0.3s ease',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
+                <CategoryTitle className="category-title">
                   {category.title}
-                </Typography>
+                </CategoryTitle>
               </CategoryItem>
             ))}
-          </Box>
+          </ScrollContainer>
 
           <ScrollButton
-            onClick={() => handleScroll('right')}
-            sx={{ right: { xs: -16, sm: -20 } }}
+            onClick={() => scroll('right')}
+            sx={{ right: { xs: -8, md: -16 } }}
           >
-            <ArrowForwardIosIcon sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }} />
+            <ArrowForwardIosIcon sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }} />
           </ScrollButton>
         </Box>
       </Container>
     </Box>
   );
-};
+}
 
 export default CategoryBar;

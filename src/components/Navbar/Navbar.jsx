@@ -25,14 +25,17 @@ import HomeIcon from '@mui/icons-material/Home';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EventIcon from '@mui/icons-material/Event';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavbar } from '../../context/NavbarContext';
 
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
+const StyledAppBar = styled(AppBar)(({ theme, show }) => ({
   backgroundColor: '#000000',
   boxShadow: 'none',
-  position: 'sticky',
+  position: 'fixed',
   top: 0,
   zIndex: 1000,
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+  transform: show ? 'translateY(0)' : 'translateY(-100%)',
+  transition: 'transform 0.3s ease',
 }));
 
 const SearchBox = styled('div')(({ theme }) => ({
@@ -138,6 +141,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const location = useLocation();
+  const { showNavbar } = useNavbar();
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -205,7 +209,7 @@ const Navbar = () => {
   );
 
   return (
-    <StyledAppBar>
+    <StyledAppBar show={showNavbar}>
       <Container maxWidth="xl">
         <Toolbar 
           disableGutters 

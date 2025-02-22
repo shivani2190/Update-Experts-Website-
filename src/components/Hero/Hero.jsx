@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, styled, TextField, InputAdornment, IconButton } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { Search } from '@mui/icons-material';
+import { useNavbar } from '../../context/NavbarContext';
 
 const fadeIn = keyframes`
   from {
@@ -25,6 +26,8 @@ const HeroSection = styled(Box)(({ theme }) => ({
   background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/assets/hero/salon-bg-bw.jpg")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  marginTop: '-15px', // Pull up the hero section to start from behind navbar
+  paddingTop: '80px', // Add padding to compensate for the navbar height
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -118,35 +121,38 @@ const SecondaryButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const SearchContainer = styled(Box)(({ theme }) => ({
-  position: 'fixed',
-  top: '65px',
-  left: 0,
-  right: 0,
-  padding: '16px',
-  backgroundColor: 'transparent',
+const SearchContainer = styled(Box)(({ isScrolled, theme }) => ({
+  position: isScrolled ? 'fixed' : 'absolute',
+  top: isScrolled ? 0 : 80,
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '100%',
+  maxWidth: '600px',
+  padding: '0 20px',
   zIndex: 1000,
+  transition: 'all 0.3s ease',
+  backgroundColor: isScrolled ? '#ffffff' : 'transparent',
+  boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none',
+  padding: isScrolled ? '15px 20px' : '10px 20px',
   [theme.breakpoints.up('md')]: {
-    position: 'relative',
-    backgroundColor: 'transparent',
     display: 'none'
   }
 }));
 
-const SearchField = styled(TextField)(({ theme }) => ({
+const SearchField = styled(TextField)({
   width: '100%',
+  backgroundColor: '#ffffff',
+  borderRadius: '30px',
   '& .MuiOutlinedInput-root': {
-    backgroundColor: '#fff',
-    borderRadius: '50px',
-    height: '48px',
+    borderRadius: '30px',
     '& fieldset': {
-      borderColor: 'transparent',
+      borderColor: '#e0e0e0',
     },
     '&:hover fieldset': {
-      borderColor: 'transparent',
+      borderColor: '#FF4D8D',
     },
     '&.Mui-focused fieldset': {
-      borderColor: 'transparent',
+      borderColor: '#FF4D8D',
     }
   },
   '& .MuiOutlinedInput-input': {
@@ -157,7 +163,7 @@ const SearchField = styled(TextField)(({ theme }) => ({
       opacity: 1,
     }
   }
-}));
+});
 
 const SearchIconButton = styled(IconButton)(({ theme }) => ({
   padding: '8px',
@@ -167,6 +173,19 @@ const SearchIconButton = styled(IconButton)(({ theme }) => ({
 
 function Hero() {
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { setShowNavbar } = useNavbar();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100);
+      setShowNavbar(scrollPosition <= 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [setShowNavbar]);
 
   const handleBookService = () => {
     navigate('/services');
@@ -174,7 +193,7 @@ function Hero() {
 
   return (
     <Box sx={{ position: 'relative', width: '100%' }}>
-      <SearchContainer>
+      <SearchContainer isScrolled={isScrolled}>
         <SearchField
           placeholder="Search for Services"
           variant="outlined"
