@@ -45,7 +45,7 @@ const Testimonials = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: isMobile ? 1 : 2,
@@ -54,20 +54,7 @@ const Testimonials = () => {
     autoplaySpeed: 4000,
     pauseOnHover: true,
     arrows: !isMobile,
-    adaptiveHeight: true,
-    customPaging: () => (
-      <Box
-        sx={{
-          width: 8,
-          height: 8,
-          borderRadius: '50%',
-          backgroundColor: '#FFE4ED',
-          '&.slick-active': {
-            backgroundColor: '#FF4D8D'
-          }
-        }}
-      />
-    )
+    adaptiveHeight: true
   };
 
   return (
