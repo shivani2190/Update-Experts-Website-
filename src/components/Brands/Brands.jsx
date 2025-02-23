@@ -17,14 +17,20 @@ const BrandCard = styled(Box)(({ theme }) => ({
   background: '#ffffff',
   transition: 'all 0.3s ease',
   cursor: 'pointer',
+  position: 'relative',
+  overflow: 'hidden',
   '&:hover': {
     transform: 'translateY(-8px)',
-    boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
-    border: '1px solid #000000',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
+    border: '1px solid #FF4D8D',
     '& img': {
       transform: 'scale(1.1)',
       filter: 'grayscale(0%)',
       opacity: 1
+    },
+    '& .brand-description': {
+      opacity: 1,
+      transform: 'translateY(0)'
     }
   },
   [theme.breakpoints.down('sm')]: {
@@ -41,8 +47,24 @@ const BrandImage = styled('img')({
   marginBottom: '12px',
   filter: 'grayscale(100%)',
   opacity: 0.8,
-  transition: 'all 0.3s ease',
+  transition: 'all 0.4s ease',
 });
+
+const BrandDescription = styled(Typography)(({ theme }) => ({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  background: 'linear-gradient(to top, rgba(255, 77, 141, 0.9), rgba(255, 77, 141, 0.7))',
+  color: '#ffffff',
+  padding: '8px',
+  fontSize: '0.75rem',
+  textAlign: 'center',
+  opacity: 0,
+  transform: 'translateY(100%)',
+  transition: 'all 0.3s ease',
+  fontWeight: 500
+}));
 
 const brands = [
   {
@@ -88,7 +110,7 @@ const Brands = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: isMobile ? 2 : 5,
@@ -96,14 +118,14 @@ const Brands = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: false,
+    arrows: !isMobile,
     responsive: [
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true
+          arrows: false
         }
       },
       {
@@ -111,7 +133,7 @@ const Brands = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: true
+          arrows: true
         }
       },
       {
@@ -119,7 +141,7 @@ const Brands = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
-          dots: true
+          arrows: true
         }
       }
     ]
@@ -167,14 +189,34 @@ const Brands = () => {
               alignItems: 'center',
               gap: 2
             },
-            '.slick-dots': {
-              bottom: '-40px',
-              '& li button:before': {
-                fontSize: '8px',
-                color: '#000000'
+            '.slick-arrow': {
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: '#fff',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+              '&:hover': {
+                background: '#FF4D8D',
+                '&::before': {
+                  color: '#fff'
+                }
               },
-              '& li.slick-active button:before': {
-                color: '#000000'
+              '&::before': {
+                color: '#FF4D8D',
+                fontSize: '20px',
+                transition: 'color 0.3s ease'
+              }
+            },
+            '.slick-prev': {
+              left: '-20px',
+              [theme.breakpoints.down('md')]: {
+                left: '-10px'
+              }
+            },
+            '.slick-next': {
+              right: '-20px',
+              [theme.breakpoints.down('md')]: {
+                right: '-10px'
               }
             }
           }}
@@ -199,22 +241,14 @@ const Brands = () => {
                       fontSize: { xs: '0.75rem', md: '0.875rem' },
                       fontWeight: 600,
                       textAlign: 'center',
-                      lineHeight: 1.2
+                      mb: 0.5
                     }}
                   >
                     {brand.name}
                   </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: '#666666',
-                      fontSize: { xs: '0.7rem', md: '0.75rem' },
-                      mt: 0.5,
-                      textAlign: 'center'
-                    }}
-                  >
+                  <BrandDescription className="brand-description">
                     {brand.description}
-                  </Typography>
+                  </BrandDescription>
                 </BrandCard>
               </Box>
             ))}

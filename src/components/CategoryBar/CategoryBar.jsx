@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
-import { Box, Typography, IconButton, styled, useTheme, useMediaQuery, Container, Link } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import React, { useState, useRef } from 'react';
+import { Box, Typography, IconButton, styled, useTheme, useMediaQuery, Container, Link, Dialog, Grid, Avatar } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 const CategoryItem = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -80,30 +79,6 @@ const CategoryTitle = styled(Typography)(({ theme }) => ({
   }
 }));
 
-const ScrollButton = styled(IconButton)(({ theme }) => ({
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  backgroundColor: '#ffffff',
-  width: '32px',
-  height: '32px',
-  minWidth: '32px',
-  borderRadius: '50%',
-  color: '#000000',
-  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-  border: '1px solid #e0e0e0',
-  '&:hover': {
-    backgroundColor: '#000000',
-    color: '#ffffff',
-  },
-  zIndex: 2,
-  [theme.breakpoints.down('sm')]: {
-    width: '24px',
-    height: '24px',
-    minWidth: '24px',
-  }
-}));
-
 const ScrollContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   overflowX: 'auto',
@@ -120,6 +95,57 @@ const ScrollContainer = styled(Box)(({ theme }) => ({
     gap: theme.spacing(1),
     padding: theme.spacing(1.5, 0.5),
   }
+}));
+
+const ServiceDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialog-paper': {
+    maxWidth: '400px',
+    width: '100%',
+    margin: theme.spacing(2),
+    borderRadius: '20px',
+    overflow: 'hidden'
+  }
+}));
+
+const ServiceGridContainer = styled(Box)(({ theme }) => ({
+  height: '470px',
+  overflowY: 'auto',
+  '&::-webkit-scrollbar': {
+    width: '4px'
+  },
+  '&::-webkit-scrollbar-track': {
+    background: 'transparent'
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: '#bbb',
+    borderRadius: '4px',
+    '&:hover': {
+      background: '#999'
+    }
+  }
+}));
+
+const ServiceItem = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: theme.spacing(1),
+  cursor: 'pointer',
+  transition: 'all 0.3s ease',
+  height: '140px',
+  '&:hover': {
+    transform: 'translateY(-4px)',
+    '& .service-name': {
+      color: '#FF4D8D'
+    }
+  }
+}));
+
+const ServiceImage = styled(Avatar)(({ theme }) => ({
+  width: 80,
+  height: 80,
+  marginBottom: theme.spacing(1),
+  borderRadius: '50%'
 }));
 
 const categories = [
@@ -162,12 +188,185 @@ const categories = [
   {
     id: 7,
     title: 'Other Services',
-    image: '/assets/categories/other-services.jpg',
+    image: '/assets/category/p7.jpg',
     link: '/services/other'
   }
 ];
 
+const salonServices = [
+  { id: 1, name: 'Waxing', image: '/assets/category/p1.jpg' },
+  { id: 2, name: 'Facial', image: '/assets/category/p2.jpg' },
+  { id: 3, name: 'Mani-Pedi', image: '/assets/category/p3.jpg' },
+  { id: 4, name: 'Clean-Up', image: '/assets/category/p4.jpg' },
+  { id: 5, name: 'De-Tan / Bleach', image: '/assets/category/p5.jpg' },
+  { id: 6, name: 'Hair', image: '/assets/category/p6.jpg' },
+  { id: 7, name: 'Body Polishing', image: '/assets/category/p7.jpg' },
+  { id: 8, name: 'Threading', image: '/assets/category/p8.jpg' },
+  { id: 9, name: 'Insta Light Pack', image: '/assets/category/p9.jpg' }
+];
+
+const spaServices = [
+  { 
+    id: 1, 
+    name: 'Best Seller Packages', 
+    image: '/assets/category/p1.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'Massage Therapy', 
+    image: '/assets/category/p2.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Energizing Therapies', 
+    image: '/assets/category/p3.jpg'
+  },
+  { 
+    id: 4, 
+    name: 'Nourishing Massage', 
+    image: '/assets/category/p4.jpg'
+  },
+  { 
+    id: 5, 
+    name: 'Special Care Massages', 
+    image: '/assets/category/p5.jpg'
+  },
+  { 
+    id: 6, 
+    name: 'Scrubs & Polishing', 
+    image: '/assets/category/p6.jpg'
+  },
+  { 
+    id: 7, 
+    name: 'Add-Ons', 
+    image: '/assets/category/p7.jpg'
+  }
+];
+
+const makeupServices = [
+  { 
+    id: 1, 
+    name: 'Makeup Packages', 
+    image: '/assets/category/p1.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'Party Makeup', 
+    image: '/assets/category/p2.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Engagement Makeup', 
+    image: '/assets/category/p3.jpg'
+  },
+  { 
+    id: 4, 
+    name: 'Bridal Makeup', 
+    image: '/assets/category/p4.jpg'
+  },
+  { 
+    id: 5, 
+    name: 'Hair Do / Saree Draping', 
+    image: '/assets/category/p5.jpg'
+  }
+];
+
+const preBridalServices = [
+  { 
+    id: 1, 
+    name: 'Premium', 
+    image: '/assets/category/p1.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'Waxing', 
+    image: '/assets/category/p2.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Facial', 
+    image: '/assets/category/p3.jpg'
+  },
+  { 
+    id: 4, 
+    name: 'Mani-Pedi', 
+    image: '/assets/category/p4.jpg'
+  },
+  { 
+    id: 5, 
+    name: 'Clean-Up', 
+    image: '/assets/category/p5.jpg'
+  },
+  { 
+    id: 6, 
+    name: 'De-Tan / Bleach', 
+    image: '/assets/category/p6.jpg'
+  },
+  { 
+    id: 7, 
+    name: 'Hair', 
+    image: '/assets/category/p7.jpg'
+  },
+  { 
+    id: 8, 
+    name: 'Body Polishing', 
+    image: '/assets/category/p8.jpg'
+  },
+  { 
+    id: 9, 
+    name: 'Threading', 
+    image: '/assets/category/p9.jpg'
+  },
+  { 
+    id: 10, 
+    name: 'Insta Light Pack', 
+    image: '/assets/category/p10.jpg'
+  }
+];
+
+const facialServices = [
+  { 
+    id: 1, 
+    name: 'LED Photo Facial', 
+    image: '/assets/categories/led-photo-facial.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'LED Cleanup', 
+    image: '/assets/categories/led-cleanup.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Add On', 
+    image: '/assets/categories/add-on.jpg'
+  }
+];
+
+const otherServices = [
+  { 
+    id: 1, 
+    name: 'Pest Control', 
+    image: '/assets/category/p1.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'Home Cleaning', 
+    image: '/assets/category/p2.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Drivers', 
+    image: '/assets/category/p3.jpg'
+  }
+];
+
 function CategoryBar() {
+  const [openSalonDialog, setOpenSalonDialog] = useState(false);
+  const [openSpaDialog, setOpenSpaDialog] = useState(false);
+  const [openFacialDialog, setOpenFacialDialog] = useState(false);
+  const [openMakeupDialog, setOpenMakeupDialog] = useState(false);
+  const [openPreBridalDialog, setOpenPreBridalDialog] = useState(false);
+  const [openOtherDialog, setOpenOtherDialog] = useState(false);
   const scrollContainerRef = useRef(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -180,6 +379,31 @@ function CategoryBar() {
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
       });
+    }
+  };
+
+  const handleCategoryClick = (category) => {
+    switch(category.title) {
+      case 'Salon At Home':
+        setOpenSalonDialog(true);
+        break;
+      case 'Spa At Home':
+        setOpenSpaDialog(true);
+        break;
+      case 'Advance Facials':
+        setOpenFacialDialog(true);
+        break;
+      case 'MakeUp At Home':
+        setOpenMakeupDialog(true);
+        break;
+      case 'Pre-bridal Makeup':
+        setOpenPreBridalDialog(true);
+        break;
+      case 'Other Services':
+        setOpenOtherDialog(true);
+        break;
+      default:
+        break;
     }
   };
 
@@ -201,19 +425,11 @@ function CategoryBar() {
           What are you looking for?
         </Typography>
         <Box sx={{ position: 'relative' }}>
-          <ScrollButton
-            onClick={() => scroll('left')}
-            sx={{ left: { xs: -8, md: -16 } }}
-          >
-            <ArrowBackIosIcon sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }} />
-          </ScrollButton>
-
           <ScrollContainer ref={scrollContainerRef}>
             {categories.map((category) => (
               <CategoryItem
                 key={category.id}
-                component={Link}
-                to={category.link}
+                onClick={() => handleCategoryClick(category)}
               >
                 <ImageContainer className="category-image">
                   <img src={category.image} alt={category.title} />
@@ -224,15 +440,274 @@ function CategoryBar() {
               </CategoryItem>
             ))}
           </ScrollContainer>
-
-          <ScrollButton
-            onClick={() => scroll('right')}
-            sx={{ right: { xs: -8, md: -16 } }}
-          >
-            <ArrowForwardIosIcon sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }} />
-          </ScrollButton>
         </Box>
       </Container>
+
+      <ServiceDialog 
+        open={openSalonDialog} 
+        onClose={() => setOpenSalonDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              Salon At Home
+            </Typography>
+            <IconButton onClick={() => setOpenSalonDialog(false)}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {salonServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
+
+      <ServiceDialog 
+        open={openSpaDialog} 
+        onClose={() => setOpenSpaDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              Spa At Home
+            </Typography>
+            <IconButton onClick={() => setOpenSpaDialog(false)}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {spaServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
+
+      <ServiceDialog 
+        open={openFacialDialog} 
+        onClose={() => setOpenFacialDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+               Advance Facials
+            </Typography>
+            <IconButton onClick={() => setOpenFacialDialog(false)}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {facialServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
+
+      <ServiceDialog 
+        open={openMakeupDialog} 
+        onClose={() => setOpenMakeupDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              MakeUp At Home
+            </Typography>
+            <IconButton onClick={() => setOpenMakeupDialog(false)}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {makeupServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
+
+      <ServiceDialog 
+        open={openPreBridalDialog} 
+        onClose={() => setOpenPreBridalDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2, pb: 1 }}>
+          <Box sx={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            mb: 2,
+            px: 1 
+          }}>
+            <Typography variant="h6" sx={{ 
+              fontWeight: 600,
+              fontSize: '1.1rem' 
+            }}>
+              Pre Bridal At Home
+            </Typography>
+            <IconButton 
+              onClick={() => setOpenPreBridalDialog(false)}
+              sx={{ p: 0.5 }}
+            >
+              <CloseIcon sx={{ fontSize: '1.2rem' }} />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {preBridalServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.85rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease',
+                        mt: 1
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
+
+      <ServiceDialog 
+        open={openOtherDialog} 
+        onClose={() => setOpenOtherDialog(false)}
+        maxWidth="md"
+      >
+        <Box sx={{ p: 2, pb: 1 }}>
+          <Box sx={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            mb: 2,
+            px: 1 
+          }}>
+            <Typography variant="h6" sx={{ 
+              fontWeight: 600,
+              fontSize: '1.1rem' 
+            }}>
+              Other Services
+            </Typography>
+            <IconButton 
+              onClick={() => setOpenOtherDialog(false)}
+              sx={{ p: 0.5 }}
+            >
+              <CloseIcon sx={{ fontSize: '1.2rem' }} />
+            </IconButton>
+          </Box>
+          <ServiceGridContainer>
+            <Grid container spacing={2}>
+              {otherServices.map((service) => (
+                <Grid item xs={4} key={service.id}>
+                  <ServiceItem>
+                    <ServiceImage src={service.image} alt={service.name} />
+                    <Typography 
+                      className="service-name"
+                      sx={{ 
+                        fontSize: '0.85rem',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                        color: '#333',
+                        transition: 'color 0.3s ease',
+                        mt: 1
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </ServiceItem>
+                </Grid>
+              ))}
+            </Grid>
+          </ServiceGridContainer>
+        </Box>
+      </ServiceDialog>
     </Box>
   );
 }

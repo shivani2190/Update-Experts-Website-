@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, styled, TextField, InputAdornment, IconButton } from '@mui/material';
+import { Box, Typography, Button, styled, TextField, InputAdornment, IconButton, Container } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { Search } from '@mui/icons-material';
@@ -131,7 +131,8 @@ const SearchContainer = styled(Box)(({ isScrolled, theme }) => ({
   padding: '0 20px',
   zIndex: 1000,
   transition: 'all 0.3s ease',
-  backgroundColor: isScrolled ? '#ffffff' : 'transparent',
+  backgroundColor: 'transparent',
+  backdropFilter: 'blur(8px)',
   boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none',
   padding: isScrolled ? '15px 20px' : '10px 20px',
   [theme.breakpoints.up('md')]: {
@@ -141,8 +142,10 @@ const SearchContainer = styled(Box)(({ isScrolled, theme }) => ({
 
 const SearchField = styled(TextField)({
   width: '100%',
-  backgroundColor: '#ffffff',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
   borderRadius: '30px',
+  backdropFilter: 'blur(8px)',
+  boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
   '& .MuiOutlinedInput-root': {
     borderRadius: '30px',
     '& fieldset': {
