@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Button, Rating, styled } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
 const ScrollContainer = styled(Box)({
   display: 'flex',
@@ -119,6 +120,16 @@ const products = [
 ];
 
 const BeautyProducts = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedProduct(null);
+  };
+
   return (
     <Box sx={{ 
       py: { xs: 2, md: 4 }, 
@@ -134,12 +145,15 @@ const BeautyProducts = () => {
           fontSize: '1rem'
         }}
       >
-        Featured Beauty Products
+        Beauty Products
       </Typography>
 
       <ScrollContainer>
         {products.map((product) => (
-          <CarouselCard key={product.id}>
+          <CarouselCard 
+            key={product.id}
+            onClick={() => handleProductClick(product)}
+          >
             <Box sx={{ position: 'relative', width: '100%' }}>
               <CarouselImage src={product.image} alt={product.title} />
               {product.discount && (
@@ -190,6 +204,12 @@ const BeautyProducts = () => {
           </CarouselCard>
         ))}
       </ScrollContainer>
+
+      <ProductDetails 
+        product={selectedProduct}
+        open={Boolean(selectedProduct)}
+        onClose={handleCloseDetails}
+      />
     </Box>
   );
 };
