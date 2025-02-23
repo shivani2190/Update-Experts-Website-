@@ -22,6 +22,7 @@ import { Box } from '@mui/material';
 import ServiceDetails from './pages/ServiceDetails';
 import OtherServices from './pages/OtherServices';
 import HomeSalonServices from './components/HomeSalonServices/HomeSalonServices';
+import WaxingServices from './components/WaxingServices/WaxingServices';
 import { NavbarProvider } from './context/NavbarContext';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:id" element={<ServiceDetails />} />
             <Route path="/services/other" element={<OtherServices />} />
+            <Route path="/services/waxing" element={<WaxingServices />} />
           </Routes>
           <Footer />
           <BottomNavigation />

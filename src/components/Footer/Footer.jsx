@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Link, IconButton, styled } from '@mui/material';
+import { Box, Container, Grid, Typography, Link, IconButton, styled, useTheme, useMediaQuery } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -9,6 +9,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import useCurrentRoute from '../../hooks/useCurrentRoute';
 
 const FooterContainer = styled(Box)`
   background: #000000;
@@ -80,6 +81,15 @@ const FooterBottom = styled(Box)`
 `;
 
 const Footer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const currentRoute = useCurrentRoute();
+  
+  // Hide footer on mobile when on waxing services page
+  if (isMobile && currentRoute === '/services/waxing') {
+    return null;
+  }
+
   const services = [
     'Facial At Home',
     'Waxing At Home',

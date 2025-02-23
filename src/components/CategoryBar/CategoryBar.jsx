@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Box, Typography, IconButton, styled, useTheme, useMediaQuery, Container, Link, Dialog, Grid, Avatar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryItem = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -361,6 +362,7 @@ const otherServices = [
 ];
 
 function CategoryBar() {
+  const navigate = useNavigate();
   const [openSalonDialog, setOpenSalonDialog] = useState(false);
   const [openSpaDialog, setOpenSpaDialog] = useState(false);
   const [openFacialDialog, setOpenFacialDialog] = useState(false);
@@ -405,6 +407,13 @@ function CategoryBar() {
       default:
         break;
     }
+  };
+
+  const handleServiceClick = (service) => {
+    if (service.name === 'Waxing') {
+      navigate('/services/waxing');
+    }
+    // Add other service navigation handling here
   };
 
   return (
@@ -461,16 +470,17 @@ function CategoryBar() {
             <Grid container spacing={2}>
               {salonServices.map((service) => (
                 <Grid item xs={4} key={service.id}>
-                  <ServiceItem>
+                  <ServiceItem onClick={() => handleServiceClick(service)}>
                     <ServiceImage src={service.image} alt={service.name} />
                     <Typography 
                       className="service-name"
                       sx={{ 
-                        fontSize: '0.9rem',
+                        fontSize: '0.85rem',
                         fontWeight: 500,
                         textAlign: 'center',
                         color: '#333',
-                        transition: 'color 0.3s ease'
+                        transition: 'color 0.3s ease',
+                        mt: 1
                       }}
                     >
                       {service.name}
