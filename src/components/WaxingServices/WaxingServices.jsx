@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Box, 
   Typography, 
@@ -744,6 +744,38 @@ const waxingServices = [
   }
 ];
 
+const tabLabels = [
+  'Top Selling',
+  'Rica',
+  'Brazilian',
+  'Aloe-Vera',
+  'Honey',
+  'Choco',
+  'Liposoluble',
+  'Add On'
+];
+
+const services = waxingServices.map((service) => ({
+  id: service.id,
+  name: service.name,
+  description: service.description,
+  duration: `${service.time} mins`,
+  price: service.price,
+  mrp: service.mrp,
+  discount: Math.floor((1 - service.price / service.mrp) * 100),
+  isBestseller: service.price < 1000 && service.mrp > 1500, // Example bestseller logic
+  bookings: '40K+ people booked this in last 30 days',
+  image: '/images/rica-wax.jpg',
+  // Add properties for filtering
+  isRica: service.brand === 'Rica' || service.description.toLowerCase().includes('rica'),
+  isBrazilian: service.description.toLowerCase().includes('brazilian'),
+  isAloeVera: service.description.toLowerCase().includes('aloe') || service.description.toLowerCase().includes('aloe-vera'),
+  isHoney: service.brand === 'Honey' || service.description.toLowerCase().includes('honey'),
+  isChoco: service.description.toLowerCase().includes('chocolate') || service.description.toLowerCase().includes('choco'),
+  isLiposoluble: service.description.toLowerCase().includes('liposoluble'),
+  isAddOn: service.price < 500 // Assuming add-ons are lower priced services
+}));
+
 const brands = ["All", "Rica", "Aloe Vera", "Brazilian", "Choco", "Honey", "Liposoluble", "Waxing(Only Services)"];
 const waxingTypes = [
   "All",
@@ -772,26 +804,53 @@ const categories = [
   { name: 'Insta Light Pack', image: '/assets/category/p9.jpg' }
 ];
 
-const services = waxingServices.map((service) => ({
-  id: service.id,
-  name: service.name,
-  description: service.description,
-  duration: `${service.time} mins`,
-  price: service.price,
-  mrp: service.mrp,
-  discount: Math.floor((1 - service.price / service.mrp) * 100),
-  isBestseller: false,
-  bookings: '40K+ people booked this in last 30 days',
-  image: '/images/rica-wax.jpg'
-}));
-
 const WaxingServices = () => {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
+  const [filteredServices, setFilteredServices] = useState(services);
+
+  const filterServices = (tabIndex) => {
+    let filtered;
+    switch (tabLabels[tabIndex]) {
+      case 'Top Selling':
+        filtered = services.filter(service => service.isBestseller);
+        break;
+      case 'Rica':
+        filtered = services.filter(service => service.isRica);
+        break;
+      case 'Brazilian':
+        filtered = services.filter(service => service.isBrazilian);
+        break;
+      case 'Aloe-Vera':
+        filtered = services.filter(service => service.isAloeVera);
+        break;
+      case 'Honey':
+        filtered = services.filter(service => service.isHoney);
+        break;
+      case 'Choco':
+        filtered = services.filter(service => service.isChoco);
+        break;
+      case 'Liposoluble':
+        filtered = services.filter(service => service.isLiposoluble);
+        break;
+      case 'Add On':
+        filtered = services.filter(service => service.isAddOn);
+        break;
+      default:
+        filtered = services;
+    }
+    setFilteredServices(filtered);
+  };
 
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
+    filterServices(newValue);
   };
+
+  // Initialize with Top Selling services
+  useEffect(() => {
+    filterServices(0);
+  }, []);
 
   return (
     <Box sx={{ pb: { xs: 7, md: 0 } }}>
@@ -851,80 +910,86 @@ const WaxingServices = () => {
           }}
         >
           <Tab label="Top Selling" />
-          <Tab label="Rica Intimate Services" />
-          <Tab label="Rica Waxing" />
-          <Tab label="Honey Aloe-Vera Intimate Services" />
-          <Tab label="Honey Aloe-Vera Waxing" />
-          <Tab label="Rica Roll-On" />
-          <Tab label="Face Wax" />
+          <Tab label="Rica" />
+          <Tab label="Brazilian" />
+          <Tab label="Aloe-Vera" />
+          <Tab label="Honey" />
+          <Tab label="Choco" />
+          <Tab label="Liposoluble" />
           <Tab label="Add On" />
         </CategoryTabs>
       </Box>
 
       {/* Service Cards */}
       <Box sx={{ p: 2 }}>
-        {services.map((service) => (
-          <ServiceCard key={service.id}>
-            <ShareButton size="small">
-              <ShareIcon fontSize="small" />
-            </ShareButton>
-            <CardContent sx={{ p: 2 }}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                    <AccessTimeIcon fontSize="small" color="action" />
-                    <Typography variant="body2" color="text.secondary">
-                      {service.duration}
+        {filteredServices.length > 0 ? (
+          filteredServices.map((service) => (
+            <ServiceCard key={service.id}>
+              <ShareButton size="small">
+                <ShareIcon fontSize="small" />
+              </ShareButton>
+              <CardContent sx={{ p: 2 }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                      <AccessTimeIcon fontSize="small" color="action" />
+                      <Typography variant="body2" color="text.secondary">
+                        {service.duration}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography variant="h6" gutterBottom>
+                      {service.name}
                     </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="h6" gutterBottom>
-                    {service.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" gutterBottom>
-                    {service.description}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Stack direction="row" alignItems="center" spacing={1}>
-                    <Typography variant="h6" color="primary">
-                      ₹{service.price}
+                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                      {service.description}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                      ₹{service.mrp}
-                    </Typography>
-                    <Chip 
-                      label={`${service.discount}% OFF`} 
-                      size="small" 
-                      color="success"
-                      sx={{ borderRadius: 1 }}
-                    />
-                    {service.isBestseller && (
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Stack direction="row" alignItems="center" spacing={1}>
+                      <Typography variant="h6" color="primary">
+                        ₹{service.price}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+                        ₹{service.mrp}
+                      </Typography>
                       <Chip 
-                        label="BESTSELLER" 
+                        label={`${service.discount}% OFF`} 
                         size="small" 
-                        color="warning"
+                        color="success"
                         sx={{ borderRadius: 1 }}
                       />
-                    )}
-                  </Stack>
+                      {service.isBestseller && (
+                        <Chip 
+                          label="BESTSELLER" 
+                          size="small" 
+                          color="warning"
+                          sx={{ borderRadius: 1 }}
+                        />
+                      )}
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography variant="body2" color="primary" sx={{ mb: 2 }}>
+                      {service.bookings}
+                    </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Button color="primary">VIEW DETAILS</Button>
+                      <AddButton variant="outlined">
+                        ADD
+                      </AddButton>
+                    </Box>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="body2" color="primary" sx={{ mb: 2 }}>
-                    {service.bookings}
-                  </Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Button color="primary">VIEW DETAILS</Button>
-                    <AddButton variant="outlined">
-                      ADD
-                    </AddButton>
-                  </Box>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </ServiceCard>
-        ))}
+              </CardContent>
+            </ServiceCard>
+          ))
+        ) : (
+          <Typography variant="body1" color="text.secondary" align="center" sx={{ py: 4 }}>
+            No services available in this category
+          </Typography>
+        )}
       </Box>
     </Box>
   );
