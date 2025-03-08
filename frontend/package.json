@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "name": "the-experts-website",
   "version": "0.1.0",
@@ -107,4 +107,3 @@
     "gh-pages": "^6.3.0"
   }
 }
->>>>>>> 43fe7091f245722aa6f635c78c07cf1acde0e153
